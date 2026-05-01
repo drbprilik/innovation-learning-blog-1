@@ -1,0 +1,688 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>125 Days | Innovation Learning</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink: #1a1a2e;
+    --paper: #faf8f3;
+    --accent: #c8401a;
+    --gold: #d4a843;
+    --mid: #5a5a72;
+    --light: #e8e4da;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    background: var(--paper);
+    color: var(--ink);
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 300;
+    line-height: 1.8;
+  }
+
+  .topbar {
+    background: var(--ink);
+    color: var(--gold);
+    text-align: center;
+    padding: 10px 20px;
+    font-size: 11px;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+  }
+
+  header {
+    border-bottom: 2px solid var(--ink);
+    padding: 36px 60px 28px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+  }
+
+  .org-name {
+    font-family: 'Playfair Display', serif;
+    font-size: 13px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--mid);
+  }
+
+  .header-rule { flex: 1; height: 1px; background: var(--light); }
+
+  .category-pill {
+    background: var(--accent);
+    color: white;
+    font-size: 10px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    padding: 6px 16px;
+    font-weight: 500;
+  }
+
+  /* HERO */
+  .hero {
+    padding: 80px 60px 0;
+    max-width: 960px;
+    margin: 0 auto;
+  }
+
+  .issue-tag {
+    font-size: 11px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--accent);
+    font-weight: 500;
+    margin-bottom: 24px;
+    display: block;
+  }
+
+  .big-number-block {
+    display: flex;
+    align-items: flex-start;
+    border-top: 3px solid var(--ink);
+    border-bottom: 3px solid var(--ink);
+    padding: 48px 0;
+    margin-bottom: 48px;
+  }
+
+  .big-number {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(100px, 18vw, 180px);
+    font-weight: 900;
+    line-height: 0.85;
+    color: var(--accent);
+    letter-spacing: -6px;
+    flex-shrink: 0;
+    margin-right: 36px;
+  }
+
+  .big-number-text { padding-top: 12px; }
+
+  .big-number-text h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(28px, 4vw, 48px);
+    font-weight: 900;
+    line-height: 1.1;
+    color: var(--ink);
+    margin-bottom: 16px;
+    letter-spacing: -0.5px;
+  }
+
+  .big-number-text h1 em {
+    font-style: italic;
+    color: var(--accent);
+  }
+
+  .big-number-text .sub {
+    font-size: 15px;
+    color: var(--mid);
+    line-height: 1.65;
+    max-width: 500px;
+  }
+
+  .byline {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    font-size: 12px;
+    color: var(--mid);
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    padding-bottom: 60px;
+    border-bottom: 1px solid var(--light);
+    flex-wrap: wrap;
+  }
+
+  .byline-dot { color: var(--accent); font-size: 18px; }
+
+  /* BODY */
+  article {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 64px 60px;
+  }
+
+  article p {
+    font-size: 17px;
+    line-height: 1.85;
+    color: #2a2a3e;
+    margin-bottom: 28px;
+  }
+
+  article p:first-of-type::first-letter {
+    font-family: 'Playfair Display', serif;
+    font-size: 72px;
+    font-weight: 900;
+    float: left;
+    line-height: 0.75;
+    margin: 8px 12px 0 0;
+    color: var(--accent);
+  }
+
+  h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 30px;
+    font-weight: 700;
+    line-height: 1.25;
+    color: var(--ink);
+    margin: 56px 0 20px;
+    letter-spacing: -0.3px;
+  }
+
+  .pullquote {
+    font-family: 'Playfair Display', serif;
+    font-size: 25px;
+    font-style: italic;
+    font-weight: 400;
+    line-height: 1.5;
+    color: var(--ink);
+    border-top: 2px solid var(--ink);
+    border-bottom: 2px solid var(--ink);
+    padding: 36px 0;
+    margin: 56px 0;
+    text-align: center;
+  }
+
+  .pullquote span {
+    display: block;
+    font-family: 'DM Sans', sans-serif;
+    font-style: normal;
+    font-size: 11px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-top: 16px;
+    font-weight: 500;
+  }
+
+  /* DARK CALLOUT */
+  .callout {
+    background: var(--ink);
+    color: var(--paper);
+    padding: 44px 40px;
+    margin: 48px 0;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .callout::before {
+    content: 'REACH';
+    font-family: 'Playfair Display', serif;
+    font-size: 90px;
+    color: rgba(255,255,255,0.03);
+    position: absolute;
+    bottom: -10px;
+    right: -6px;
+    line-height: 1;
+    font-weight: 900;
+    letter-spacing: -2px;
+  }
+
+  .callout-label {
+    font-size: 10px;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: var(--gold);
+    font-weight: 500;
+    margin-bottom: 20px;
+  }
+
+  .callout p {
+    color: #c8c8d8 !important;
+    font-size: 16px !important;
+    margin-bottom: 0 !important;
+    position: relative;
+    line-height: 1.8 !important;
+  }
+
+  .callout p::first-letter { all: unset; }
+
+  /* GOLD CALLOUT — direct address */
+  .admin-note {
+    border-left: 4px solid var(--gold);
+    padding: 28px 28px 28px 32px;
+    margin: 48px 0;
+    background: #fdf8ee;
+  }
+
+  .admin-note .callout-label { color: var(--accent); margin-bottom: 12px; }
+
+  .admin-note p {
+    font-size: 16px !important;
+    line-height: 1.8 !important;
+    color: var(--ink) !important;
+    margin-bottom: 0 !important;
+    font-style: italic;
+  }
+
+  .admin-note p::first-letter { all: unset; }
+
+  /* REACH MODEL */
+  .reach-model {
+    margin: 48px 0;
+    border: 1px solid var(--ink);
+    overflow: hidden;
+  }
+
+  .reach-header {
+    background: var(--ink);
+    padding: 22px 28px;
+    display: flex;
+    align-items: baseline;
+    gap: 16px;
+    flex-wrap: wrap;
+  }
+
+  .reach-header .reach-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 26px;
+    font-weight: 900;
+    color: var(--gold);
+    letter-spacing: 6px;
+  }
+
+  .reach-header .reach-sub {
+    font-size: 11px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.35);
+  }
+
+  .reach-row {
+    display: flex;
+    align-items: stretch;
+    border-top: 1px solid var(--light);
+  }
+
+  .reach-letter {
+    font-family: 'Playfair Display', serif;
+    font-size: 54px;
+    font-weight: 900;
+    color: var(--accent);
+    width: 76px;
+    min-width: 76px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-right: 1px solid var(--light);
+    line-height: 1;
+    padding: 20px 0;
+    background: #fff;
+  }
+
+  .reach-content {
+    padding: 24px 26px;
+    flex: 1;
+    background: var(--paper);
+  }
+
+  .reach-content h4 {
+    font-family: 'Playfair Display', serif;
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--ink);
+    margin-bottom: 8px;
+  }
+
+  .reach-content p {
+    font-size: 14px !important;
+    line-height: 1.65 !important;
+    color: var(--mid) !important;
+    margin-bottom: 0 !important;
+  }
+
+  .reach-content p::first-letter {
+    font-family: 'Playfair Display', serif !important;
+    font-size: 72px !important;
+    font-weight: 900 !important;
+    float: left !important;
+    line-height: 0.75 !important;
+    margin: 8px 12px 0 0 !important;
+    color: var(--ink) !important;
+  }
+
+  /* PROGRAM ACTIVITIES */
+  .activities {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1px;
+    background: var(--light);
+    border: 1px solid var(--light);
+    margin: 48px 0;
+  }
+
+  .activity {
+    background: var(--paper);
+    padding: 26px 22px;
+  }
+
+  .activity .act-label {
+    font-size: 10px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--accent);
+    font-weight: 500;
+    margin-bottom: 6px;
+  }
+
+  .activity h4 {
+    font-family: 'Playfair Display', serif;
+    font-size: 17px;
+    font-weight: 700;
+    color: var(--ink);
+    margin-bottom: 8px;
+    line-height: 1.2;
+  }
+
+  .activity p {
+    font-size: 13px !important;
+    line-height: 1.6 !important;
+    color: var(--mid) !important;
+    margin-bottom: 0 !important;
+  }
+
+  .activity p::first-letter {
+    font-family: 'Playfair Display', serif !important;
+    font-size: 72px !important;
+    font-weight: 900 !important;
+    float: left !important;
+    line-height: 0.75 !important;
+    margin: 8px 12px 0 0 !important;
+    color: var(--ink) !important;
+  }
+
+  /* CTA */
+  .partner-cta {
+    background: var(--accent);
+    padding: 52px 40px;
+    margin: 56px 0 0;
+    text-align: center;
+  }
+
+  .partner-cta h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 30px;
+    font-weight: 700;
+    color: white;
+    margin-bottom: 16px;
+    line-height: 1.2;
+  }
+
+  .partner-cta p {
+    color: rgba(255,255,255,0.88) !important;
+    font-size: 17px !important;
+    max-width: 540px;
+    margin: 0 auto 32px !important;
+    line-height: 1.65 !important;
+  }
+
+  .partner-cta p::first-letter { 
+    font-family: 'DM Sans', sans-serif !important;
+    font-size: 17px !important;
+    font-weight: 300 !important;
+    color: rgba(255,255,255,0.88) !important;
+    float: none !important;
+    line-height: inherit !important;
+    margin: 0 !important;
+  }
+
+  .partner-cta .cta-btn {
+    display: inline-block;
+    background: white;
+    color: var(--accent);
+    font-size: 11px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    font-weight: 500;
+    padding: 16px 40px;
+    text-decoration: none;
+    font-family: 'DM Sans', sans-serif;
+    cursor: pointer;
+  }
+
+  .divider {
+    width: 60px;
+    height: 2px;
+    background: var(--accent);
+    margin: 40px auto;
+  }
+
+  footer {
+    background: var(--ink);
+    color: var(--paper);
+    padding: 48px 60px;
+    text-align: center;
+    border-top: 3px solid var(--accent);
+  }
+
+  footer .footer-org {
+    font-family: 'Playfair Display', serif;
+    font-size: 22px;
+    font-weight: 700;
+    color: var(--gold);
+    margin-bottom: 10px;
+  }
+
+  footer p { font-size: 13px; color: rgba(255,255,255,0.45); letter-spacing: 1px; }
+
+  @media (max-width: 680px) {
+    header { padding: 24px; }
+    .hero { padding: 48px 24px 0; }
+    .big-number-block { flex-direction: column; gap: 16px; }
+    .big-number { margin-right: 0; letter-spacing: -4px; }
+    article { padding: 40px 24px; }
+    .activities { grid-template-columns: 1fr; }
+    footer { padding: 40px 24px; }
+    .partner-cta { padding: 40px 24px; }
+    .callout, .admin-note { padding: 28px 20px; }
+  }
+</style>
+</head>
+<body>
+
+<div class="topbar">Innovation Learning &nbsp;·&nbsp; We REACH Every Child. Every Day.</div>
+
+<header>
+  <div class="org-name">Innovation Learning</div>
+  <div class="header-rule"></div>
+  <div class="category-pill">Resilience &amp; Future Readiness</div>
+</header>
+
+<section class="hero">
+  <span class="issue-tag">The Five-Hour Advantage — A Framework for What Comes Before and After School</span>
+
+  <div class="big-number-block">
+    <div class="big-number">125</div>
+    <div class="big-number-text">
+      <h1>Every Child Already Has <em>a Second School Year.</em></h1>
+      <p class="sub">Five hours a day, before and after school, across a 180-day school year. That is 125 additional days — nearly 900 hours — already present in every school community. At Innovation Learning, we built a research-based framework to make every one of those hours matter.</p>
+    </div>
+  </div>
+
+  <div class="byline">
+    <span>Innovation Learning</span>
+    <span class="byline-dot">·</span>
+    <span>Before &amp; After School Programs</span>
+    <span class="byline-dot">·</span>
+    <span>The REACH Framework · 2025</span>
+  </div>
+</section>
+
+<article>
+
+  <p>We are preparing children for a world that does not yet exist. Artificial intelligence is reshaping work, learning, and daily life faster than any curriculum can track. The jobs our youngest students will hold probably have no names yet. And the one thing researchers across every discipline agree on is this: the students who will thrive are not necessarily the ones who mastered the right tools. They are the ones who built the internal capacity to keep going when the tools change — who can adapt, persist, connect, and find meaning in the face of genuine uncertainty. That capacity has a name. It is resilience. And resilience, as Dr. Ann Masten of the University of Minnesota established through decades of research, does not emerge from exceptional children. It emerges from ordinary environments that consistently provide the right conditions. It is, in her words, <em>ordinary magic</em> — available to every child, in every community, when the adults around them design for it deliberately.</p>
+
+  <p>That is precisely what Innovation Learning exists to do. And yet for too long, the hours surrounding the school day have been treated as an afterthought — warehousing children rather than developing them. Schools deserve a better standard from their after-school partners, families deserve to know that every hour counts, and children deserve a program as intentional and joyful as the school day itself. The hours we have to build something real are larger than most people have stopped to calculate.</p>
+
+  <h2>The Five-Hour Advantage</h2>
+
+  <p>Every school day, millions of children leave their classrooms and enter what is often the least intentional part of their day. Before school begins and after the final bell, five hours pass — hours that, across a full school year, add up to nearly 900 hours of time with students. Over a K–8 career, that is more than 8,000 hours. The equivalent of five to nine additional school years.</p>
+
+  <p>We call this the Five-Hour Advantage. Not because the advantage is automatic — but because the potential is there, waiting to be activated by the right people, the right environment, and the right framework. Innovation Learning was built to activate it.</p>
+
+  <div class="admin-note">
+    <div class="callout-label">A Note for School Administrators</div>
+    <p>"As a former school administrator, I understand why after-school program selection rarely gets the attention it deserves. You are managing a school. The bar for a before-and-after program is often simple: keep children safe until families arrive. And honestly — most providers make it easy to stop there. The field has been dominated for decades by custodial care and disconnected enrichment, programs that are good for kids and necessary for families but carry no real connection to learning, school culture, or child outcomes. Administrators know it. They just haven't had a reason to demand more — because more didn't seem to exist. That needs to change. These 125 days are not outside your school's mission. They are an extension of it. Research is unambiguous: children who experience structured, relationship-driven, outcomes-based programming before and after school arrive more ready to learn, attend more consistently, and develop the resilience that drives long-term academic success. The school day is grounded in research and outcomes. There is no reason the hours surrounding it should be any different. Innovation Learning exists to prove that after-school can be research-based, deliberately designed for whole-child success — and genuinely fun and exciting for children. Schools, families, and children deserve to expect that from every provider. We believe it's time administrators start demanding it."</p>
+  </div>
+
+  <p>Those 125 days are not supplemental. They are not gap-filling. They are a second developmental year running in parallel with the first — and at Innovation Learning, every hour of them is shaped by a single, research-grounded philosophy: that resilience can be deliberately built, in every child, through the consistent, joyful, purposeful experience of being genuinely known, genuinely challenged, and genuinely part of something that matters.</p>
+
+  <div class="pullquote">
+    "Resilience arises from ordinary adaptive systems that all children possess. Our job is not to implant something foreign — it is to activate what is already there."
+    <span>Ann Masten · University of Minnesota · Resilience Researcher</span>
+  </div>
+
+  <h2>The Research Foundation: The Circle of Courage</h2>
+
+  <p>Every Innovation Learning program is grounded in the Circle of Courage — a framework developed by Dr. Larry Brendtro, Dr. Martin Brokenleg, and Dr. Steve Van Bockern, whose landmark work <em>Reclaiming Youth at Risk</em> brought together decades of Western developmental psychology, resilience science, and the wisdom of Indigenous child-rearing traditions into a single, unified developmental model. What that convergence revealed was profound in its simplicity: across cultures, across centuries, and across every serious body of child development research, the same four universal needs emerge. Children thrive — and only thrive — when they consistently experience <strong>Belonging, Mastery, Independence, and Generosity</strong>.</p>
+
+  <p>These are not program goals. They are developmental needs — as essential to healthy growth as nutrition and sleep. A child who does not feel they belong cannot access the kind of learning that builds confidence. A child who has never experienced genuine mastery — real struggle followed by real success — has no evidence that their effort changes outcomes. A child without independence has no internal compass. A child without generosity has no connection to something larger than themselves. The Circle of Courage tells us, with remarkable precision, what every child needs and what every well-designed program must provide.</p>
+
+  <p>Critically, this is not a framework for at-risk children. Systematic research confirms that universal resilience-building benefits every child — the child navigating instability at home and the child from a stable, loving family alike. Both need belonging. Both need mastery. Both benefit from the strengthening of the adaptive systems that will carry them through the statistically inevitable difficulties every human life contains. You cannot have too much resilience. Innovation Learning builds it for all.</p>
+
+  <h2>The REACH Model: Where Research Becomes Practice</h2>
+
+  <p>Understanding the Circle of Courage is essential. But understanding alone is not enough. The question that drives Innovation Learning's day-to-day work is not whether we believe in Belonging, Mastery, Independence, and Generosity — every thoughtful educator does. The question is how we actually produce those experiences, consistently, for every child, across every program day. That is what the REACH Model was built to answer.</p>
+
+  <p>REACH is Innovation Learning's operational framework — the bridge between the science of resilience and what a Resilience Coach does at 3:15 on a Tuesday afternoon with a room full of tired, energized, complicated, wonderful children. It is not a checklist. It is a way of being with children that becomes, over time, second nature. It is what separates a program that supervises children from a program that develops them.</p>
+
+  <div class="reach-model">
+    <div class="reach-header">
+      <span class="reach-title">REACH</span>
+      <span class="reach-sub">The Innovation Learning Operational Framework</span>
+    </div>
+
+    <div class="reach-row">
+      <div class="reach-letter">R</div>
+      <div class="reach-content">
+        <h4>Relationships First</h4>
+        <p>Everything begins with relationships — not as sentiment, but as neurological reality. Emmy Werner's landmark sixty-year longitudinal study found that the most reliable predictor of resilience in children was the presence of at least one caring adult who believed in them. Not a program. Not a curriculum. A person. In Innovation Learning programs, Relationships First means every child is greeted by name at the door, every interaction is genuine, and Resilience Coaches are fully present — phones away, eyes on children — because children know the difference, and that difference is everything.</p>
+      </div>
+    </div>
+
+    <div class="reach-row">
+      <div class="reach-letter">E</div>
+      <div class="reach-content">
+        <h4>Environment by Design</h4>
+        <p>Resilience does not emerge from good intentions. It emerges from well-designed environments. Before a single child arrives, every Innovation Learning program space is fully prepared: zones defined, materials organized, the schedule posted on the whiteboard in specific and engaging language, snack ready, and every Resilience Coach at the door — free to do the one thing that matters most in that moment: be completely present. A child who walks into a space that was waiting for them receives a message before any adult speaks: you were expected here, and someone cared enough to prepare this for you.</p>
+      </div>
+    </div>
+
+    <div class="reach-row">
+      <div class="reach-letter">A</div>
+      <div class="reach-content">
+        <h4>Activate Belonging</h4>
+        <p>Belonging is not passive. It must be actively created — every day, in every activity, for every child, including the ones on the margins who have learned that belonging is not safe and who push it away defensively. Resilience Coaches are trained to scan, to notice, and to move toward the child who is sitting alone, the child whose group has quietly stopped including them, the child who seems present but is not part of anything. Circle Time, shared meals, collaborative project work, and physical play are all belonging tools — designed to ensure that no child ends a program day unseen.</p>
+      </div>
+    </div>
+
+    <div class="reach-row">
+      <div class="reach-letter">C</div>
+      <div class="reach-content">
+        <h4>Consistency Creates Safety</h4>
+        <p>Safety is not built through a single powerful experience. It is built through the repetition of reliable ones. Children whose nervous systems have been calibrated for unpredictability need to experience — many times, before they believe it — that this place works the same way tomorrow as it did today. The daily schedule is reviewed every morning as a community ritual. Activities run thirty minutes each, consistently. The same adult shows up with the same warmth on a difficult Friday as on a good Monday. Consistency, understood this way, is not a management preference. It is a clinical intervention — and a form of love.</p>
+      </div>
+    </div>
+
+    <div class="reach-row">
+      <div class="reach-letter">H</div>
+      <div class="reach-content">
+        <h4>Have Purpose in Everything</h4>
+        <p>Every activity, every schedule block, every interaction in an Innovation Learning program is connected to a clear developmental reason — and Resilience Coaches understand that reason and can communicate it. When children understand why they eat together, why they work hard through difficulty, why they serve through Charity for Change, they are not just participating in a program. They are participating in their own development. Viktor Frankl established that the capacity to find meaning — to believe one's existence serves something beyond oneself — is among the most powerful resilience factors available to human beings. We make that available to every child, every day, by design.</p>
+      </div>
+    </div>
+  </div>
+
+  <h2>What 125 Days of REACH Actually Looks Like</h2>
+
+  <p>The REACH framework is not a philosophy that floats above the program. It is embedded in every activity of every program day — a structured, active, joyful sequence that children look forward to, bring their friends into, and remember long after the year ends. Here is how it comes to life:</p>
+
+  <div class="activities">
+    <div class="activity">
+      <div class="act-label">Activity One</div>
+      <h4>DEN — Decompress, Energize, Nourish</h4>
+      <p>Children arrive to a warm, prepared space with materials that invite calm connection. Shared snack is not transition time — it is belonging time. Eating together lowers cortisol, activates social bonding, and communicates before a word is spoken: we are a community, and you are part of it.</p>
+    </div>
+    <div class="activity">
+      <div class="act-label">Activity Two</div>
+      <h4>Circle Time — Community and Launch</h4>
+      <p>Every program day begins with the whole community gathered in a circle — every child seen, the day's schedule previewed with specific energy and genuine care. A daily re-enrollment: not a recitation of rules, but a re-invitation into the community that created them together.</p>
+    </div>
+    <div class="activity">
+      <div class="act-label">Activity Three</div>
+      <h4>PATHS — Academic Support</h4>
+      <p>Purposeful, structured homework support that builds mastery — the experience of genuine struggle followed by genuine success. Resilience Coaches resist the urge to give answers and instead hold the belief that the child can find them. That belief, borrowed long enough, becomes the child's own.</p>
+    </div>
+    <div class="activity">
+      <div class="act-label">Activity Four</div>
+      <h4>Innovation Stations — Project-Based Learning</h4>
+      <p>Small groups solve real problems, build real solutions, fail together, revise together, and succeed together. Children who build a bridge or design a community campaign with three peers have not just learned something. They have become part of something — and that shared investment is belonging at its most powerful.</p>
+    </div>
+    <div class="activity">
+      <div class="act-label">Activity Five</div>
+      <h4>SPARK — Movement and Physical Play</h4>
+      <p>Physical activity is non-negotiable — and it is a resilience-building tool as much as a fitness one. Games are chosen specifically to require cooperation, include everyone, and create the shared moments children reference with each other for months. Resilience Coaches play alongside students. The high-five that crosses social divides is a belonging moment as much as a sports one.</p>
+    </div>
+    <div class="activity">
+      <div class="act-label">Activity Six</div>
+      <h4>Free Play — Choice, Agency, and Friendship</h4>
+      <p>Unstructured play is not a gap in the program — it is one of its most developmentally rich investments. Children negotiate, build friendships, make real decisions, and practice the independence that resilience requires. Resilience Coaches stay present without controlling, watching the margins and protecting the conditions that allow genuine, child-directed experience to unfold.</p>
+    </div>
+    <div class="activity">
+      <div class="act-label">Activity Seven</div>
+      <h4>Charity for Change — Generosity in Action</h4>
+      <p>Children who contribute to something beyond themselves discover, through concrete evidence, that they matter. Charity for Change transforms a group of program participants into collaborators on something that helps someone else — and that transformation in collective identity is one of the most powerful experiences a program can offer.</p>
+    </div>
+  </div>
+
+  <p>Each activity runs thirty minutes — consistently — so that children can anticipate what comes next, settle into each block with full investment, and experience the predictability that anxious nervous systems need before they can relax enough to grow. The structure is not restrictive. The structure is protective. It is what makes the freedom within each block genuinely feel like freedom.</p>
+
+  <div class="callout">
+    <div class="callout-label">The Innovation Learning Conviction</div>
+    <p>When the REACH model is implemented with full fidelity — when every child is genuinely known, the environment is intentionally prepared, belonging is actively activated, consistency is maintained, and every activity is connected to a clear purpose — something remarkable happens: children do not just attend. They want to be there. They bring their friends. They talk about it at dinner. They come back not because they are required to, but because something real is being built, and they can feel it. That is not an accident. It is the predictable outcome of a program designed, from the ground up, to produce it.
+    </p>
+  </div>
+
+  <h2>What This Means for Schools and Communities</h2>
+
+  <p>Innovation Learning partners with schools to bring the REACH framework to the five hours that surround the school day — not to duplicate what schools do brilliantly, but to extend the culture of growth, belonging, and high expectation into the hours that would otherwise pass without intention. When children spend their mornings and afternoons in environments built around the same values their school day represents, those values become internalized rather than situational. Resilience stops being something children practice in one place. It becomes who they are.</p>
+
+  <p>The research is clear on what follows. Resilient students are more engaged learners. Students who feel they belong at school attend more consistently. Students who have experienced genuine mastery — who have evidence that their effort changes outcomes — approach academic challenge differently. The before- and after-school program, designed with this intention, becomes a force multiplier for everything the school day is working to achieve. This is what the field of after-school programming should look like — and what schools, families, and children have every right to demand from it. Custodial care and loosely organized enrichment set a floor too low for the developmental opportunity these hours represent. A research-grounded, outcomes-driven, joyful program is not an unreasonable expectation. It is the standard.</p>
+
+  <p>Those children arrive Monday morning different because of what happened in those 125 days. Not because they were lectured at. Because they were known, challenged, included, and given real stakes in something that mattered. Because Resilience Coaches showed up for them — fully, consistently, and with purpose — in the ordinary hours that turned out to be anything but.</p>
+
+  <div class="pullquote">
+    "Every child who walks through our doors is stronger and more capable than they yet know. Our job is to create the conditions that allow them to discover that for themselves."
+    <span>Brett, Founder &amp; CEO · Innovation Learning</span>
+  </div>
+
+  <h2>Every Child. Every Day. By Design.</h2>
+
+  <p>This is not a program for at-risk children or underperforming schools. The Circle of Courage and the REACH Model apply universally — because the four developmental needs they address are universal. Every child needs belonging. Every child needs the experience of genuine mastery. Every child benefits from independence and the opportunity to contribute. Building stronger adaptive systems in every child means greater capacity to handle academic pressure, stronger navigation of social complexity, and a more resilient foundation for the difficulties every human life will eventually hold.</p>
+
+  <p>Innovation Learning exists to make that universally available — in every before-and-after-school program, in every school community, for every child who walks through the door. Not through hope. Through design. Through a framework grounded in sixty years of developmental research, refined in real programs with real children, and delivered every day by Resilience Coaches who understand that the most important thing they bring to work is not a credential — it is the genuine belief that every child is more capable than they yet know.</p>
+
+  <p>125 days. Nearly 900 hours. Every one of them an opportunity. Every one of them, at Innovation Learning, used with intention.</p>
+
+  <p><em>We REACH every child. Every day.</em></p>
+
+  <div class="partner-cta">
+    <h3>Let's Talk About Your 125 Days</h3>
+    <p>Innovation Learning partners with K–8 schools to bring the REACH framework to before- and after-school hours — proving that research-based, outcomes-driven programming and genuinely joyful experiences for children are not opposites. They are exactly the same thing, done right.</p>
+    <a href="#" class="cta-btn">Start the Conversation</a>
+  </div>
+
+</article>
+
+<footer>
+  <div class="footer-org">Innovation Learning</div>
+  <p>We REACH Every Child. Every Day. &nbsp;·&nbsp; Before School. After School. Building Resilient Learners for an Uncertain World.</p>
+</footer>
+
+</body>
+</html>
