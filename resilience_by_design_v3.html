@@ -3,16 +3,18 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Resilience by Design | Education's Missing Curriculum</title>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<title>Resilience Is Engineered | Innovation Learning</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&family=Crimson+Pro:ital,wght@0,300;0,400;1,300;1,400&display=swap" rel="stylesheet">
 <style>
   :root {
-    --ink: #1a1a2e;
-    --paper: #faf8f3;
-    --accent: #c8401a;
-    --gold: #d4a843;
-    --mid: #5a5a72;
-    --light: #e8e4da;
+    --ink:      #1a1a2e;
+    --paper:    #faf8f3;
+    --accent:   #c8401a;
+    --gold:     #d4a843;
+    --sage:     #4a6741;
+    --mid:      #5a5a72;
+    --light:    #e8e4da;
+    --scene-bg: #f0ede4;
   }
 
   * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -43,7 +45,6 @@
     justify-content: space-between;
     gap: 20px;
   }
-
   .org-name {
     font-family: 'Playfair Display', serif;
     font-size: 13px;
@@ -51,11 +52,9 @@
     text-transform: uppercase;
     color: var(--mid);
   }
-
   .header-rule { flex: 1; height: 1px; background: var(--light); }
-
   .category-pill {
-    background: var(--accent);
+    background: var(--sage);
     color: white;
     font-size: 10px;
     letter-spacing: 3px;
@@ -64,12 +63,12 @@
     font-weight: 500;
   }
 
+  /* HERO */
   .hero {
-    padding: 80px 60px 0;
     max-width: 960px;
     margin: 0 auto;
+    padding: 80px 60px 0;
   }
-
   .issue-tag {
     font-size: 11px;
     letter-spacing: 3px;
@@ -79,48 +78,31 @@
     margin-bottom: 24px;
     display: block;
   }
-
-  .hero-block {
+  .hero-statement {
     border-top: 3px solid var(--ink);
     border-bottom: 3px solid var(--ink);
-    padding: 52px 0;
+    padding: 52px 0 48px;
     margin-bottom: 48px;
   }
-
-  .hero-eyebrow {
-    font-size: 11px;
-    letter-spacing: 4px;
-    text-transform: uppercase;
-    color: var(--mid);
-    font-weight: 500;
-    margin-bottom: 20px;
-  }
-
-  .hero-block h1 {
+  .hero-statement h1 {
     font-family: 'Playfair Display', serif;
-    font-size: clamp(38px, 5.5vw, 68px);
+    font-size: clamp(36px, 5.5vw, 70px);
     font-weight: 900;
-    line-height: 1.05;
-    color: var(--ink);
+    line-height: 1.06;
     letter-spacing: -1.5px;
+    color: var(--ink);
     margin-bottom: 28px;
   }
-
-  .hero-block h1 em {
-    font-style: italic;
-    color: var(--accent);
-  }
-
-  .hero-deck {
-    font-size: 19px;
-    color: var(--mid);
+  .hero-statement h1 em { font-style: italic; color: var(--accent); }
+  .hero-statement .deck {
+    font-family: 'Crimson Pro', serif;
+    font-size: clamp(17px, 2.2vw, 23px);
     line-height: 1.65;
+    color: var(--mid);
     max-width: 700px;
-    border-left: 3px solid var(--gold);
-    padding-left: 24px;
     font-weight: 300;
+    font-style: italic;
   }
-
   .byline {
     display: flex;
     align-items: center;
@@ -133,23 +115,21 @@
     border-bottom: 1px solid var(--light);
     flex-wrap: wrap;
   }
-
   .byline-dot { color: var(--accent); font-size: 18px; }
 
+  /* ARTICLE */
   article {
     max-width: 720px;
     margin: 0 auto;
     padding: 64px 60px;
   }
-
-  article p {
+  article > p {
     font-size: 17px;
-    line-height: 1.85;
+    line-height: 1.9;
     color: #2a2a3e;
     margin-bottom: 28px;
   }
-
-  article p:first-of-type::first-letter {
+  article > p:first-of-type::first-letter {
     font-family: 'Playfair Display', serif;
     font-size: 72px;
     font-weight: 900;
@@ -159,59 +139,30 @@
     color: var(--accent);
   }
 
-  /* SECTION MARKERS — WHY / WHAT / HOW */
-  .section-marker {
-    display: flex;
-    align-items: center;
-    gap: 20px;
-    margin: 64px 0 24px;
-  }
-
-  .section-marker .marker-word {
-    font-family: 'Playfair Display', serif;
-    font-size: 13px;
-    font-weight: 900;
-    letter-spacing: 6px;
-    text-transform: uppercase;
-    color: var(--paper);
-    background: var(--accent);
-    padding: 6px 18px;
-    flex-shrink: 0;
-  }
-
-  .section-marker .marker-title {
-    font-family: 'Playfair Display', serif;
-    font-size: 26px;
-    font-weight: 700;
-    color: var(--ink);
-    letter-spacing: -0.3px;
-    line-height: 1.2;
-  }
-
   h2 {
     font-family: 'Playfair Display', serif;
-    font-size: 26px;
+    font-size: 30px;
     font-weight: 700;
     line-height: 1.25;
     color: var(--ink);
-    margin: 48px 0 16px;
+    margin: 60px 0 20px;
     letter-spacing: -0.3px;
   }
 
+  /* PULLQUOTE */
   .pullquote {
     font-family: 'Playfair Display', serif;
-    font-size: 24px;
+    font-size: 25px;
     font-style: italic;
     font-weight: 400;
     line-height: 1.5;
     color: var(--ink);
     border-top: 2px solid var(--ink);
     border-bottom: 2px solid var(--ink);
-    padding: 32px 0;
-    margin: 48px 0;
+    padding: 36px 0;
+    margin: 56px 0;
     text-align: center;
   }
-
   .pullquote span {
     display: block;
     font-family: 'DM Sans', sans-serif;
@@ -220,307 +171,413 @@
     letter-spacing: 3px;
     text-transform: uppercase;
     color: var(--accent);
-    margin-top: 14px;
+    margin-top: 16px;
     font-weight: 500;
   }
 
-  /* DARK CALLOUT */
-  .callout {
+  /* STAT TRIO */
+  .stat-trio {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 1px;
     background: var(--ink);
-    color: var(--paper);
-    padding: 40px;
-    margin: 48px 0;
-    position: relative;
-    overflow: hidden;
+    border: 1px solid var(--ink);
+    margin: 52px 0;
   }
-
-  .callout::before {
-    content: 'REACH';
+  .stat-cell {
+    background: var(--paper);
+    padding: 32px 22px;
+    text-align: center;
+  }
+  .stat-num {
     font-family: 'Playfair Display', serif;
-    font-size: 90px;
-    color: rgba(255,255,255,0.03);
-    position: absolute;
-    bottom: -10px;
-    right: -6px;
-    line-height: 1;
+    font-size: 52px;
     font-weight: 900;
+    color: var(--accent);
+    line-height: 1;
+    margin-bottom: 10px;
     letter-spacing: -2px;
   }
+  .stat-label { font-size: 12px; color: var(--mid); line-height: 1.55; }
+  .stat-source { font-size: 10px; color: #aaa; margin-top: 10px; text-transform: uppercase; letter-spacing: 1px; }
 
-  .callout-label {
+  /* MYTH / TRUTH */
+  .myth-truth {
+    margin: 52px 0;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1px;
+    background: var(--light);
+    border: 1px solid var(--light);
+  }
+  .myth-col { background: #f5f0e8; padding: 32px 28px; }
+  .truth-col { background: #eef4eb; padding: 32px 28px; }
+  .col-label { font-size: 10px; letter-spacing: 4px; text-transform: uppercase; font-weight: 500; margin-bottom: 18px; }
+  .myth-col .col-label { color: #9a4040; }
+  .truth-col .col-label { color: var(--sage); }
+  .myth-col p, .truth-col p { font-size: 14px; line-height: 1.7; color: var(--ink); margin-bottom: 16px; }
+  .myth-col p:last-child, .truth-col p:last-child { margin-bottom: 0; }
+  .myth-col p::first-letter, .truth-col p::first-letter { all: unset; }
+  .myth-col p strong, .truth-col p strong { font-weight: 500; display: block; margin-bottom: 4px; }
+
+  /* NARRATIVE SCENE */
+  .scene-wrapper {
+    background: var(--scene-bg);
+    border-left: 4px solid var(--gold);
+    margin: 60px -40px;
+    padding: 52px 56px 52px 52px;
+  }
+  .scene-label {
     font-size: 10px;
     letter-spacing: 4px;
     text-transform: uppercase;
     color: var(--gold);
     font-weight: 500;
-    margin-bottom: 16px;
+    margin-bottom: 8px;
   }
-
-  .callout p {
-    color: #c8c8d8 !important;
-    font-size: 16px !important;
-    margin-bottom: 14px !important;
-    position: relative;
-    line-height: 1.8 !important;
+  .scene-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 22px;
+    font-weight: 700;
+    color: var(--ink);
+    margin-bottom: 36px;
+    line-height: 1.3;
   }
-
-  .callout p:last-child { margin-bottom: 0 !important; }
-  .callout p::first-letter { all: unset; }
-  article .callout p::first-letter,
-  article .partner-cta p::first-letter,
-  article .sidebar-note p::first-letter,
-  article .footnote p::first-letter {
-    font-family: inherit !important;
-    font-size: inherit !important;
-    font-weight: inherit !important;
-    float: none !important;
-    line-height: inherit !important;
-    margin: 0 !important;
-    color: inherit !important;
+  .scene-title em { font-style: italic; color: var(--accent); }
+  .scene-wrapper p {
+    font-family: 'Crimson Pro', serif;
+    font-size: 18px;
+    line-height: 1.88;
+    color: #2a2a3c;
+    margin-bottom: 22px;
+    font-weight: 300;
   }
-
-  /* GOLD SIDEBAR */
-  .sidebar-note {
-    border-left: 4px solid var(--gold);
-    padding: 26px 26px 26px 30px;
-    margin: 48px 0;
-    background: #fdf8ee;
+  .scene-wrapper p::first-letter { all: unset; }
+  .ann {
+    background: rgba(212,168,67,0.22);
+    border-bottom: 1px solid rgba(212,168,67,0.6);
   }
-
-  .sidebar-note .callout-label { color: var(--accent); margin-bottom: 10px; }
-
-  .sidebar-note p {
-    font-size: 16px !important;
-    line-height: 1.8 !important;
-    color: var(--ink) !important;
-    margin-bottom: 12px !important;
+  .scene-note {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 13px;
+    color: var(--mid);
+    margin-top: 36px;
+    padding-top: 20px;
+    border-top: 1px solid var(--light);
+    letter-spacing: 0.3px;
+    font-style: italic;
+    line-height: 1.7;
   }
+  .scene-note strong { font-weight: 500; font-style: normal; }
 
-  .sidebar-note p:last-child { margin-bottom: 0 !important; }
-  .sidebar-note p::first-letter { all: unset; }
-
-  /* STAT ROW */
-  .stat-bar {
-    display: flex;
+  /* STRATEGY TRIO */
+  .strategy-trio {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
     gap: 1px;
     background: var(--ink);
     border: 1px solid var(--ink);
-    margin: 48px 0;
-    flex-wrap: wrap;
+    margin: 52px 0;
   }
-
-  .stat {
+  .strategy-cell {
     background: var(--paper);
-    padding: 26px 20px;
-    flex: 1;
-    min-width: 130px;
-    text-align: center;
+    padding: 30px 24px;
   }
-
-  .stat-num {
+  .strat-badge {
     font-family: 'Playfair Display', serif;
-    font-size: 40px;
+    font-size: 32px;
     font-weight: 900;
     color: var(--accent);
     line-height: 1;
-    margin-bottom: 8px;
+    margin-bottom: 10px;
     letter-spacing: -1px;
   }
-
-  .stat-label {
+  .strat-name {
     font-size: 11px;
-    letter-spacing: 1.5px;
+    letter-spacing: 3px;
     text-transform: uppercase;
-    color: var(--mid);
+    color: var(--ink);
     font-weight: 500;
-    line-height: 1.5;
+    margin-bottom: 12px;
   }
-
-  /* FOUR NEEDS */
-  .needs-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 1px;
-    background: var(--ink);
-    border: 1px solid var(--ink);
-    margin: 40px 0;
+  .strategy-cell p {
+    font-size: 13px;
+    line-height: 1.7;
+    color: var(--mid);
+    margin-bottom: 10px;
   }
-
-  .need {
-    background: var(--paper);
-    padding: 28px 24px;
+  .strategy-cell p:last-child { margin-bottom: 0; }
+  .strategy-cell p::first-letter { all: unset; }
+  .strat-in-practice {
+    font-size: 11px;
+    letter-spacing: 1px;
+    color: var(--sage);
+    font-weight: 500;
+    margin-top: 14px;
+    padding-top: 12px;
+    border-top: 1px solid var(--light);
+    line-height: 1.6;
   }
-
-  .need-word {
-    font-family: 'Playfair Display', serif;
-    font-size: 20px;
-    font-weight: 900;
-    color: var(--accent);
-    margin-bottom: 8px;
-  }
-
-  .need p {
-    font-size: 14px !important;
-    line-height: 1.65 !important;
-    color: var(--mid) !important;
-    margin-bottom: 0 !important;
-  }
-
-  .need p::first-letter { all: unset; }
 
   /* REACH MODEL */
   .reach-model {
-    margin: 40px 0;
+    margin: 52px 0;
     border: 1px solid var(--ink);
     overflow: hidden;
   }
-
   .reach-header {
     background: var(--ink);
-    padding: 20px 28px;
+    padding: 22px 28px;
     display: flex;
     align-items: baseline;
     gap: 16px;
     flex-wrap: wrap;
   }
-
-  .reach-header .reach-title {
+  .reach-title-word {
     font-family: 'Playfair Display', serif;
-    font-size: 24px;
+    font-size: 26px;
     font-weight: 900;
     color: var(--gold);
     letter-spacing: 6px;
   }
-
-  .reach-header .reach-sub {
+  .reach-sub {
     font-size: 11px;
     letter-spacing: 2px;
     text-transform: uppercase;
     color: rgba(255,255,255,0.35);
   }
-
   .reach-row {
     display: flex;
     align-items: stretch;
     border-top: 1px solid var(--light);
   }
-
   .reach-letter {
     font-family: 'Playfair Display', serif;
-    font-size: 58px;
+    font-size: 54px;
     font-weight: 900;
     color: var(--accent);
-    width: 72px;
-    min-width: 72px;
+    width: 76px;
+    min-width: 76px;
     display: flex;
     align-items: center;
     justify-content: center;
     border-right: 1px solid var(--light);
     line-height: 1;
-    padding: 18px 0;
+    padding: 20px 0;
     background: #fff;
   }
-
   .reach-content {
-    padding: 20px 24px;
+    padding: 26px 28px;
     flex: 1;
     background: var(--paper);
   }
-
-  .reach-content h4 {
-    font-family: 'Playfair Display', serif;
-    font-size: 17px;
-    font-weight: 700;
-    color: var(--ink);
-    margin-bottom: 6px;
-  }
-
-  .reach-content p {
-    font-size: 14px !important;
-    line-height: 1.65 !important;
-    color: var(--mid) !important;
-    margin-bottom: 0 !important;
-  }
-
-  .reach-content p::first-letter {
-    font-family: 'DM Sans', sans-serif !important;
-    font-size: 18px !important;
-    font-weight: 500 !important;
-    float: none !important;
-    color: #2a2a3e !important;
-    line-height: inherit !important;
-    margin: 0 !important;
-  }
-
-  /* CTA */
-  .partner-cta {
-    background: var(--accent);
-    padding: 52px 40px;
-    margin: 56px 0 0;
-    text-align: center;
-  }
-
-  .partner-cta h3 {
-    font-family: 'Playfair Display', serif;
-    font-size: 28px;
-    font-weight: 700;
-    color: white;
-    margin-bottom: 14px;
-    line-height: 1.2;
-  }
-
-  .partner-cta p {
-    color: rgba(255,255,255,0.88) !important;
-    font-size: 17px !important;
-    max-width: 540px;
-    margin: 0 auto 28px !important;
-    line-height: 1.65 !important;
-  }
-
-  .partner-cta p::first-letter { all: unset; }
-
-  .partner-cta .cta-btn {
-    display: inline-block;
-    background: white;
-    color: var(--accent);
-    font-size: 11px;
+  .reach-hook {
+    font-size: 10px;
     letter-spacing: 3px;
     text-transform: uppercase;
+    color: var(--sage);
     font-weight: 500;
-    padding: 16px 40px;
-    text-decoration: none;
-    font-family: 'DM Sans', sans-serif;
-    cursor: pointer;
+    margin-bottom: 8px;
   }
-
-  .series-nav {
-    background: var(--light);
-    border-top: 2px solid var(--ink);
-    padding: 24px 60px;
-    display: flex;
-    align-items: center;
-    gap: 20px;
-    flex-wrap: wrap;
+  .reach-content h4 {
+    font-family: 'Playfair Display', serif;
+    font-size: 19px;
+    font-weight: 700;
+    color: var(--ink);
+    margin-bottom: 10px;
   }
-
-  .series-label {
+  .reach-content p {
+    font-size: 14px;
+    line-height: 1.78;
+    color: var(--mid);
+    margin-bottom: 14px;
+  }
+  .reach-content p:last-child { margin-bottom: 0; }
+  .reach-content p::first-letter { all: unset; }
+  .reach-strategies {
+    margin-top: 14px;
+    padding-top: 14px;
+    border-top: 1px solid var(--light);
+  }
+  .reach-strategies .rs-label {
     font-size: 10px;
     letter-spacing: 3px;
     text-transform: uppercase;
     color: var(--mid);
+    margin-bottom: 8px;
     font-weight: 500;
-    flex-shrink: 0;
+  }
+  .strategy-chip {
+    display: inline-block;
+    background: var(--ink);
+    color: var(--gold);
+    font-size: 10px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    padding: 4px 10px;
+    font-weight: 500;
+    margin: 2px 4px 2px 0;
+    font-family: 'DM Sans', sans-serif;
   }
 
-  .series-link {
-    font-family: 'Playfair Display', serif;
-    font-size: 15px;
-    font-weight: 700;
-    color: var(--ink);
-    text-decoration: none;
-    border-bottom: 1px solid var(--accent);
-    padding-bottom: 1px;
+  /* RESEARCH STRIP */
+  .research-strip {
+    border: 1px solid var(--light);
+    background: #fff;
+    padding: 36px 32px;
+    margin: 52px 0;
   }
+  .rs-header-label {
+    font-size: 10px;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: var(--accent);
+    font-weight: 500;
+    margin-bottom: 24px;
+  }
+  .research-item {
+    display: flex;
+    gap: 20px;
+    margin-bottom: 22px;
+    padding-bottom: 22px;
+    border-bottom: 1px solid var(--light);
+  }
+  .research-item:last-child { margin-bottom: 0; padding-bottom: 0; border-bottom: none; }
+  .ri-letter {
+    font-family: 'Playfair Display', serif;
+    font-size: 32px;
+    font-weight: 900;
+    color: var(--light);
+    line-height: 1;
+    flex-shrink: 0;
+    width: 28px;
+    margin-top: 2px;
+  }
+  .ri-text { font-size: 14px; line-height: 1.7; color: var(--ink); }
+  .ri-text strong { font-weight: 500; display: block; margin-bottom: 4px; }
+  .ri-text cite { font-size: 11px; color: var(--mid); font-style: normal; letter-spacing: 0.5px; }
+
+  /* CONVICTION */
+  .conviction {
+    background: var(--ink);
+    color: var(--paper);
+    padding: 44px 40px;
+    margin: 56px 0;
+    position: relative;
+    overflow: hidden;
+  }
+  .conviction::after {
+    content: 'REACH';
+    font-family: 'Playfair Display', serif;
+    font-size: 130px;
+    color: rgba(255,255,255,0.03);
+    position: absolute;
+    bottom: -20px;
+    right: -10px;
+    line-height: 1;
+    font-weight: 900;
+    letter-spacing: 4px;
+  }
+  .conviction-label {
+    font-size: 10px;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: var(--gold);
+    font-weight: 500;
+    margin-bottom: 20px;
+  }
+  .conviction p {
+    color: #c8c8d8;
+    font-size: 16px;
+    line-height: 1.85;
+    position: relative;
+    margin-bottom: 16px;
+  }
+  .conviction p:last-child { margin-bottom: 0; }
+  .conviction p::first-letter { all: unset; }
+
+  /* ADMIN CHALLENGE */
+  .admin-challenge {
+    border-left: 4px solid var(--sage);
+    padding: 28px 28px 28px 32px;
+    margin: 52px 0;
+    background: #eef4eb;
+  }
+  .admin-challenge .ac-label {
+    font-size: 10px;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: var(--sage);
+    font-weight: 500;
+    margin-bottom: 12px;
+  }
+  .admin-challenge p {
+    font-size: 16px;
+    line-height: 1.8;
+    color: var(--ink);
+    margin-bottom: 14px;
+    font-style: italic;
+  }
+  .admin-challenge p:last-child { margin-bottom: 0; }
+  .admin-challenge p::first-letter { all: unset; }
+
+  /* CTA */
+  .partner-cta {
+    background: var(--ink);
+    padding: 56px 40px;
+    margin: 56px 0 0;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+  .partner-cta::before {
+    content: 'REACH';
+    font-family: 'Playfair Display', serif;
+    font-size: 130px;
+    font-weight: 900;
+    color: rgba(255,255,255,0.03);
+    position: absolute;
+    bottom: -20px;
+    left: 50%;
+    transform: translateX(-50%);
+    white-space: nowrap;
+    letter-spacing: 20px;
+  }
+  .partner-cta h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 32px;
+    font-weight: 700;
+    color: var(--gold);
+    margin-bottom: 16px;
+    line-height: 1.2;
+    position: relative;
+  }
+  .partner-cta p {
+    color: rgba(255,255,255,0.75);
+    font-size: 17px;
+    max-width: 540px;
+    margin: 0 auto 32px;
+    line-height: 1.7;
+    position: relative;
+  }
+  .partner-cta p::first-letter { all: unset; }
+  .cta-btn {
+    display: inline-block;
+    background: var(--accent);
+    color: white;
+    font-size: 11px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    font-weight: 500;
+    padding: 18px 44px;
+    text-decoration: none;
+    font-family: 'DM Sans', sans-serif;
+    cursor: pointer;
+    position: relative;
+    border: none;
+  }
+
+  .divider { width: 60px; height: 2px; background: var(--accent); margin: 48px auto; }
 
   footer {
     background: var(--ink);
@@ -529,7 +586,6 @@
     text-align: center;
     border-top: 3px solid var(--accent);
   }
-
   footer .footer-org {
     font-family: 'Playfair Display', serif;
     font-size: 22px;
@@ -537,254 +593,343 @@
     color: var(--gold);
     margin-bottom: 10px;
   }
-
   footer p { font-size: 13px; color: rgba(255,255,255,0.45); letter-spacing: 1px; }
 
-  .footnote {
-    font-size: 13px;
-    color: var(--mid);
-    border-top: 1px solid var(--light);
-    padding-top: 28px;
-    margin-top: 40px;
-    line-height: 1.7;
-  }
-
-  .footnote p { font-size: 13px !important; color: var(--mid) !important; margin-bottom: 8px !important; }
-  .footnote p::first-letter {
-    font-family: 'DM Sans', sans-serif !important;
-    font-size: 13px !important;
-    font-weight: 400 !important;
-    float: none !important;
-    color: var(--mid) !important;
-    line-height: inherit !important;
-    margin: 0 !important;
-  }
-
-  @media (max-width: 680px) {
-    header { padding: 24px; }
+  @media (max-width: 720px) {
+    header, footer { padding: 24px; }
     .hero { padding: 48px 24px 0; }
     article { padding: 40px 24px; }
-    .needs-grid { grid-template-columns: 1fr; }
-    .stat-bar { flex-direction: column; }
-    footer { padding: 40px 24px; }
-    .partner-cta { padding: 40px 24px; }
-    .callout, .sidebar-note { padding: 24px 20px; }
-    .series-nav { padding: 20px 24px; }
-    .section-marker { flex-direction: column; align-items: flex-start; gap: 10px; }
+    .stat-trio, .strategy-trio { grid-template-columns: 1fr; }
+    .myth-truth { grid-template-columns: 1fr; }
+    .scene-wrapper { margin: 48px -24px; padding: 40px 24px; }
+    .partner-cta { padding: 44px 24px; }
   }
 </style>
 </head>
 <body>
 
-<div class="topbar">Resilience &amp; Academic Readiness &nbsp;·&nbsp; A Framework for Every Child, Every School, Every Program</div>
+<div class="topbar">Innovation Learning &nbsp;·&nbsp; We REACH Every Child. Every Day.</div>
 
 <header>
-  <div class="org-name">Research &amp; Practice in Child Development</div>
+  <div class="org-name">Innovation Learning</div>
   <div class="header-rule"></div>
-  <div class="category-pill">Education &amp; Future Readiness</div>
+  <div class="category-pill">For Teachers &amp; Administrators</div>
 </header>
 
 <section class="hero">
-  <span class="issue-tag">Why Resilience Is No Longer Optional — For Any Child</span>
-
-  <div class="hero-block">
-    <div class="hero-eyebrow">The Why, What &amp; How of Resilience-Centered Education</div>
-    <h1>Every Child Needs This.<br><em>Not Just the Struggling Ones.</em></h1>
-    <p class="hero-deck">Resilience research was born in crisis — studying children navigating poverty, trauma, instability. But the world has changed. The conditions that once defined "at-risk" now touch every child in some form. What the research built for the margins turns out to be essential for everyone.</p>
+  <span class="issue-tag">Resilience Science &amp; School Design</span>
+  <div class="hero-statement">
+    <h1>Resilience Is Not a Gift.<br><em>It Is a Design Problem.</em></h1>
+    <p class="deck">The children who thrive through adversity are not the lucky ones. They are the ones whose schools were deliberately built to produce thriving. Sixty years of research tells us exactly what that design requires — and it is already within reach of every teacher, in every classroom, on any ordinary school day.</p>
   </div>
-
   <div class="byline">
-    <span>For School Administrators &amp; Families</span>
+    <span>Innovation Learning</span>
     <span class="byline-dot">·</span>
-    <span>Child Development &amp; Academic Readiness</span>
+    <span>A Framework for Educators</span>
     <span class="byline-dot">·</span>
-    <span>2025</span>
+    <span>The REACH Model · 2025</span>
   </div>
 </section>
 
 <article>
 
-  <p>For a long time, resilience was a word we associated with kids in hard circumstances. Children navigating instability at home. Children in under-resourced communities. The research that built our understanding of resilience — Emmy Werner's landmark Kauai study, Ann Masten's decades of work, the Circle of Courage developed by Brendtro, Brokenleg, and Van Bockern — came largely from studying children who had every reason not to thrive and somehow did anyway. That research was important. It still is. But if we keep framing resilience as something only certain kids need, we're missing what is right in front of us: the world has changed in ways that make resilience a requirement for every child growing up in it.</p>
+  <p>There is a story educators tell — quietly, often without realizing it — about resilient children. It goes like this: some kids just have it. They bounce back. They keep going when things get hard. They find a way through. And then there are the others. We do what we can for both, but deep down, resilience feels like something a child either comes with or doesn't — distributed by temperament, family, circumstance, luck. Not by us. Not by what we do on a Tuesday morning in October.</p>
 
-  <p>This is not a sky-is-falling argument. Children are not fragile. Most are doing fine. But "fine" and "fully equipped for what's coming" are different things — and the gap between them is wider than it used to be, for more kids than we tend to admit.</p>
+  <p>That story is wrong. And the cost of believing it — of treating resilience as a trait to be discovered rather than a capacity to be built — is paid every day by children who needed their school to be something it didn't know it could be.</p>
 
-  <!-- ═══════════════ WHY ═══════════════ -->
-  <div class="section-marker">
-    <span class="marker-word">WHY</span>
-    <span class="marker-title">The World Every Child Is Actually Growing Up In</span>
-  </div>
+  <p>The science has been clear for decades. Resilience is not innate. It is not fixed. It is not a personality type. It is the predictable outcome of specific environmental conditions, consistently provided. Which means the most important question in education right now is not which children are resilient. It is whether our schools are designed to produce resilience — and whether every teacher and administrator in the building has made the deliberate choice to design for it.</p>
 
-  <p>Start with the pandemic. Schools closed for months — in some places, well over a year. Children lost not just instruction time but something harder to recover: the daily practice of being with other people. Of navigating conflict, building friendships, reading a room. Social skills and emotional regulation aren't just personality traits — they're practiced capacities, and millions of children had that practice interrupted at a critical developmental window. Research now puts average pandemic learning loss at somewhere between half a year and a full year of academic progress. The emotional and social losses are harder to quantify, but anyone who works with kids knows they're real and they're still playing out.</p>
+  <h2>What the Research Actually Established</h2>
 
-  <p>Then there's social media. It arrived in children's lives faster than any adult had time to think carefully about what it would do. What it does — and the research on this is increasingly consistent — is subject children to an unrelenting stream of social comparison at exactly the age when identity is most fragile. Forty percent of high school students reported persistent feelings of sadness or hopelessness in the CDC's most recent Youth Risk Behavior Survey. That is not a fringe statistic. It's four out of ten teenagers, across every demographic, every zip code. And it's been climbing steadily for over a decade.</p>
+  <p>The study that changed everything began not in a laboratory but on an island. In the late 1950s, developmental psychologist Emmy Werner began following 698 children born on the island of Kauai — many into poverty, family instability, and serious adversity. She followed them for sixty years. The question she was asking was deceptively simple: what determines whether a child exposed to significant hardship grows up to thrive or struggles to function?</p>
 
-  <div class="stat-bar">
-    <div class="stat">
-      <div class="stat-num">40%</div>
-      <div class="stat-label">of high schoolers report persistent sadness or hopelessness — CDC, 2023</div>
-    </div>
-    <div class="stat">
-      <div class="stat-num">45%</div>
-      <div class="stat-label">of youth ages 10–24 struggled with mental health in the past two years — Surgo Health, 2024</div>
-    </div>
-    <div class="stat">
-      <div class="stat-num">7 mo.</div>
-      <div class="stat-label">average academic learning loss from pandemic school closures — global data, 2024</div>
-    </div>
-  </div>
-
-  <p>And beyond those specific pressures, there's the general pace of things. The world these children are inheriting moves faster and shifts more often than the one that produced the education system we're still largely running. Jobs that didn't exist five years ago are now in demand. Jobs that seem secure today may not exist in ten years. AI is reshaping what work looks like — and what skills actually matter — in real time. No curriculum can track that. What can keep up is a child who has been taught to keep going when things change, to tolerate uncertainty, to recover from failure and try again. That's resilience. And it's not a remedial skill. It's the skill of the century.</p>
-
-  <div class="sidebar-note">
-    <div class="callout-label">This Isn't Just About Struggling Kids</div>
-    <p>Here is what gets overlooked: the student who is doing fine — good grades, stable home, supportive parents — is often succeeding on borrowed infrastructure. The structure around them has caught them every time before they had to catch themselves. Move them to a harder environment — a more demanding school, a college campus where no one is tracking whether they show up, a workplace that rewards genuine self-direction — and some of them discover they are less equipped than their record suggested.</p>
-    <p>Resilience isn't remediation. It's what makes a successful student genuinely stronger at the next level. More creative. Willing to take intellectual risks. Able to fail at something and not fall apart. Every child deserves that. Not just the ones we're worried about.</p>
-  </div>
-
-  <!-- ═══════════════ WHAT ═══════════════ -->
-  <div class="section-marker">
-    <span class="marker-word">WHAT</span>
-    <span class="marker-title">What Resilience Actually Is — and What Every Child Needs to Build It</span>
-  </div>
-
-  <p>Resilience isn't toughness. It's not the ability to endure difficulty without showing it. Ann Masten, one of the most cited researchers in the field, called it "ordinary magic" — the predictable output of ordinary conditions that any child can access when the adults around them build those conditions deliberately. The research is clear on what those conditions are. They've been documented across cultures, across decades, across every kind of adversity researchers have studied.</p>
-
-  <p>The Circle of Courage — a framework developed by Dr. Larry Brendtro, Dr. Martin Brokenleg, and Dr. Steve Van Bockern, drawing on developmental psychology and Indigenous traditions of child-rearing — distills that research into four universal needs. Every child. Not just the ones struggling. Every one.</p>
-
-  <div class="needs-grid">
-    <div class="need">
-      <div class="need-word">Belonging</div>
-      <p>The need to be known — genuinely, not administratively. A child who doesn't feel they belong in a learning environment is spending energy on self-protection that should go toward learning. Belonging isn't a feeling. It's a condition that has to be actively maintained.</p>
-    </div>
-    <div class="need">
-      <div class="need-word">Mastery</div>
-      <p>The experience of real struggle followed by real success. A child who has never had to work through genuine difficulty has no evidence that effort changes outcomes. When difficulty finally arrives — and it always does — they have nothing to draw on.</p>
-    </div>
-    <div class="need">
-      <div class="need-word">Independence</div>
-      <p>The capacity to direct oneself. Children who are always told what to do, think, and feel never build the internal compass that adult life requires. Independence is practiced, not granted — and programs that don't create space for it are leaving a gap.</p>
-    </div>
-    <div class="need">
-      <div class="need-word">Generosity</div>
-      <p>Connection to something larger than oneself. Viktor Frankl identified this as one of the most powerful human resilience factors: the belief that your existence matters beyond your own immediate needs. Children who experience this regularly are fundamentally more grounded.</p>
-    </div>
-  </div>
-
-  <p>When these four conditions are consistently present, something measurable happens. Hundreds of studies involving more than a million students have now connected resilience and social-emotional development to academic outcomes. The numbers are not subtle. A landmark meta-analysis of 213 programs found an average 11-percentile-point gain in academic achievement — just from building these conditions deliberately. A 2025 study from Yale and USC, covering 33,000 students across 40 programs, found gains that widened to 8.4 percentile points in programs lasting longer than a semester. Attendance improves. Engagement improves. And the students who were already doing well get better — not marginally, but genuinely, in the ways that matter at the next level.</p>
+  <p>What she found, replicated and extended by researchers across every subsequent decade, was this: the children who thrived were not distinguished by temperament, intelligence, or family wealth. They were distinguished by the presence — somewhere in their lives — of at least one stable, caring adult who believed in them and showed up for them consistently. Not a program. Not a policy. A person who knew their name, saw them clearly, and kept showing up.</p>
 
   <div class="pullquote">
-    "Resilience does not emerge from exceptional children. It emerges from ordinary environments that consistently provide the right conditions."
+    "Resilience arises from ordinary adaptive systems that all children possess. Our job is not to implant something foreign — it is to activate what is already there."
     <span>Ann Masten · University of Minnesota · Resilience Researcher</span>
   </div>
 
-  <!-- ═══════════════ HOW ═══════════════ -->
-  <div class="section-marker">
-    <span class="marker-word">HOW</span>
-    <span class="marker-title">What This Actually Looks Like in a School</span>
+  <p>Ann Masten, whose subsequent research at the University of Minnesota gave this phenomenon its most precise articulation, called it <em>ordinary magic</em>: the discovery that resilience is not rare, not mysterious, and not reserved for exceptional children. It emerges from ordinary environments that provide four specific things, consistently: Belonging, Mastery, Independence, and Generosity. The Circle of Courage — the developmental framework synthesized by Brendtro, Brokenleg, and Van Bockern from resilience science and Indigenous child-rearing wisdom — names these four not as aspirational program goals, but as developmental necessities. As essential to healthy human growth as nutrition and sleep.</p>
+
+  <p>Every school is already producing resilience outcomes — for better or worse. The question is whether you are doing it deliberately.</p>
+
+  <div class="stat-trio">
+    <div class="stat-cell">
+      <div class="stat-num">1</div>
+      <div class="stat-label">stable, caring adult relationship is the single most reliable predictor of resilience in children — more than income, neighborhood, or family structure</div>
+      <div class="stat-source">Werner · Kauai Longitudinal Study</div>
+    </div>
+    <div class="stat-cell">
+      <div class="stat-num">70<span style="font-size:28px">%</span></div>
+      <div class="stat-label">of children exposed to four or more significant adverse experiences showed resilient outcomes when key protective environmental factors were present</div>
+      <div class="stat-source">CDC · Adverse Childhood Experiences Research</div>
+    </div>
+    <div class="stat-cell">
+      <div class="stat-num">0</div>
+      <div class="stat-label">children are born non-resilient. Every child possesses the adaptive systems resilience requires. Environments either activate those systems — or they don't</div>
+      <div class="stat-source">Masten · 2001 · Ordinary Magic</div>
+    </div>
   </div>
 
-  <p>Knowing what children need is the easy part. The harder question is what to actually do about it — in a real classroom, a real hallway, with real kids who are tired and distracted and sometimes difficult. The REACH model was built to answer that question. Not as a philosophy. As an operational framework: specific, trainable practices that any adult can learn and any school or program can implement with intention. The setting changes. What children need doesn't.</p>
+  <h2>The Myth and the Truth</h2>
+
+  <p>Before we can design schools for resilience, we have to confront the assumptions that make that design feel unnecessary. Most of what educators believe about resilience was absorbed rather than examined — reasonable-seeming ideas that turn out, when held against the evidence, to point in precisely the wrong direction.</p>
+
+  <div class="myth-truth">
+    <div class="myth-col">
+      <div class="col-label">The Myth</div>
+      <p><strong>Resilience is a personality trait.</strong> You can see it in certain kids. They bounce back, they don't take things too hard, they've got a kind of natural toughness. Other kids just aren't built that way.</p>
+      <p><strong>Hardship builds resilience.</strong> Don't rescue them too quickly. Struggle is the teacher. Let them figure it out. What doesn't kill them makes them stronger.</p>
+      <p><strong>Resilient kids don't need as much from us.</strong> They're fine. Direct your energy toward the ones who are visibly struggling. The resilient ones will manage.</p>
+      <p><strong>Schools can't teach resilience.</strong> It's a family matter. A character matter. By the time we get them, it's largely set.</p>
+    </div>
+    <div class="truth-col">
+      <div class="col-label">The Research</div>
+      <p><strong>Resilience is produced by environments.</strong> Specific, identifiable conditions — belonging, genuine mastery, independence, purpose — activate adaptive systems every child already possesses. The conditions are teachable. The environment is designable. That is a choice schools can make.</p>
+      <p><strong>Adversity alone produces trauma, not growth.</strong> It is adversity with support — with skilled adults present, with challenge held within a relationship of genuine belief — that can produce growth. The key variable is what surrounds the hardship, not the hardship itself.</p>
+      <p><strong>Resilience requires ongoing investment for every child.</strong> Including the ones who appear fine. You cannot have too much resilience. The children who seem to manage are not exempt from needing the conditions that build the capacity to do so.</p>
+      <p><strong>Schools are among the most powerful resilience environments humans have ever created.</strong> When designed to be. That design is a professional and moral choice available to every educator.</p>
+    </div>
+  </div>
+
+  <h2>What It Looks Like When It's Working</h2>
+
+  <p>Research establishes the conditions. But it can be hard to feel the reality of those conditions from a research summary. So before we name the framework, let us spend a day with a child — a composite, drawn from the kinds of children who sit in classrooms across every school, in every district, every day of the academic year.</p>
+
+  <p>Marcus is nine years old. Third grade. His parents divorced two years ago; he moved to a new apartment, switched schools, and spent most of last year as the new kid — quiet in the particular way children are quiet when they have not yet decided whether a place is safe. He is not a child anyone would describe as naturally resilient. He is a child who has had a difficult couple of years and is still working out, at nine, what to trust.</p>
+
+  <!-- NARRATIVE SCENE -->
+  <div class="scene-wrapper">
+    <div class="scene-label">A Day in the Life</div>
+    <div class="scene-title">A Tuesday in October — <em>Marcus Arrives at School</em></div>
+
+    <p>Marcus's teacher, Mr. Osei, is standing at the classroom door when Marcus comes down the hallway. Not inside, not at his desk reviewing the morning's lesson — <span class="ann">at the door, making eye contact, saying Marcus's name</span> before Marcus has fully arrived. This is not a grand gesture. It takes four seconds. But Marcus's nervous system registers it the same way it has registered it every morning for six weeks: this person was expecting me. I was worth being expected.</p>
+
+    <p>Morning meeting begins at 8:15. The whole class sits in a circle — not desks in rows, not an assembly, a circle where every face is visible to every other face. Today's greeting travels around the circle: each child says the name of the person to their left and adds one word about how they are feeling. Marcus says "tired." No one corrects this. No one asks him to feel something different. <span class="ann">He was heard. He was seen. He is part of what is happening today.</span> That is enough for morning meeting. It is more than enough.</p>
+
+    <p>By 9:00, they are in math. The class is working on multi-digit multiplication — a concept that has been giving Marcus trouble. He gets stuck on a problem and sits with the stuckness, pencil hovering. Six months ago, at his old school, getting stuck felt like confirmation of something permanently wrong with him. Here, he has learned a different protocol: <span class="ann">Try 3 before asking Mr. Osei</span>. He tries rereading the problem. He tries drawing a diagram. He tries working it backward. On the third attempt, something gives — not the full solution, but a foothold. He raises his hand.</p>
+
+    <p>Mr. Osei crouches beside his desk and says: "Walk me through what you've tried." Not "let me show you." Not "you're doing it wrong." <em>Walk me through what you've tried.</em> The question contains an assumption — that Marcus has already done something worth examining. That his effort is real and countable. Marcus walks him through it. Mr. Osei asks one question that reframes the third step. Marcus solves the problem himself. This takes nine minutes. Mr. Osei does not rescue him before those nine minutes are done, <span class="ann">because the nine minutes are the point.</span></p>
+
+    <p>At lunch, Marcus sits with his usual group — four kids who assembled around a shared obsession with a particular card game that Marcus introduced to the class in September. <span class="ann">He introduced it.</span> That is still remarkable to him. The table he sits at exists, in some small way, because of something he brought. He belongs to it in a way that feels earned rather than assigned.</p>
+
+    <p>In the afternoon, the class works on a community mapping project — students are documenting resources in the neighborhood surrounding the school and identifying gaps. Marcus's group has been focused on the park three blocks away, which has broken equipment that the younger children in the neighborhood can't safely use. They are writing a letter to the city parks department. Marcus drafts the opening paragraph. He reads it to his group. They suggest one change. He makes it and reads it again. <span class="ann">His words, revised and owned by him, will be sent to actual decision-makers about something that affects real children.</span> He is nine years old and he is doing something that matters.</p>
+
+    <p>At 2:40, Mr. Osei catches Marcus on the way out — a quick moment in the doorway, the kind that takes thirty seconds. "I saw you working through that multiplication problem today. You didn't quit." He says it directly, without fanfare. Marcus nods and leaves. On the bus home, he sits a little differently than he used to. <span class="ann">He has evidence now — accumulated over weeks of school days like this one — that his effort makes a difference. That he is the kind of person whose effort makes a difference.</span> He does not have a name for this evidence. He just carries it.</p>
+
+    <p class="scene-note">Marcus is a composite — drawn from the kinds of children who occupy classrooms in every school, in every district, on every ordinary day. What happened to him on this Tuesday was not luck, and it did not depend on exceptional resources, a special program, or an unusually gifted teacher. It depended on a set of deliberate choices — about how to greet students, how to structure morning meeting, how to respond when a child gets stuck, how to design academic work that carries real stakes. Every one of those choices is available to every teacher in every school. <strong>That availability is the whole point.</strong></p>
+  </div>
+
+  <h2>Three Strategies That Make It Real</h2>
+
+  <p>Marcus's Tuesday was shaped by several specific practices — simple, teachable, research-grounded strategies that translate the science of resilience into concrete moments in the school day. Three of them appear repeatedly in what the research identifies as high-impact resilience-building practice. They are worth naming directly, because naming them makes them transferable.</p>
+
+  <div class="strategy-trio">
+    <div class="strategy-cell">
+      <div class="strat-badge">2×10</div>
+      <div class="strat-name">Two Minutes, Ten Days</div>
+      <p>For ten consecutive school days, a teacher spends two uninterrupted minutes talking personally with a student who is disengaged, disconnected, or struggling — about anything the student cares about, with no academic agenda.</p>
+      <p>The research behind this is unambiguous: two minutes of genuine personal attention, sustained across ten days, measurably shifts a student's behavior, engagement, and sense of school belonging — even when nothing else in their environment changes.</p>
+      <div class="strat-in-practice">In Marcus's day: Mr. Osei has been doing this with Marcus since the third week of school. The shift in how Marcus carries himself — the bus-ride posture — is, in significant part, its accumulated result.</div>
+    </div>
+    <div class="strategy-cell">
+      <div class="strat-badge">Try 3</div>
+      <div class="strat-name">Three Before Me</div>
+      <p>Before asking the teacher for help, a student must genuinely attempt three independent strategies: reread the problem, try a different approach, ask a peer. Only then does the teacher become the resource of last resort.</p>
+      <p>This single protocol, practiced consistently, shifts a child's internal relationship to difficulty. Getting stuck stops feeling like failure and starts feeling like the beginning of a process — one the child owns, one they have evidence of surviving and moving through.</p>
+      <div class="strat-in-practice">In Marcus's day: Nine minutes with a fraction problem, three attempted approaches, and one question from a teacher who believed the answer was already inside him. The nine minutes are the mastery experience. Without them, it's just math.</div>
+    </div>
+    <div class="strategy-cell">
+      <div class="strat-badge">4:1</div>
+      <div class="strat-name">Four Positives to One Correction</div>
+      <p>For every corrective interaction with a student — redirect, correction, consequence — a teacher makes four genuine, specific, positive acknowledgments. Not praise for breathing. Specific observation: "I noticed you stayed with that problem." "You helped Jada find her place." "That's a real question."</p>
+      <p>The neurological case for this ratio is well established: brains calibrated by chronic criticism cannot access the learning state. The 4:1 ratio does not lower standards. It creates the neurological conditions under which high standards are actually reachable.</p>
+      <div class="strat-in-practice">In Marcus's day: The 2:40 doorway moment — "I saw you working through that problem. You didn't quit." — is a 4:1 acknowledgment. It costs thirty seconds. What it deposits in Marcus's internal account is not small.</div>
+    </div>
+  </div>
+
+  <p>These strategies are not silver bullets. They are not sufficient on their own. What they are is concrete, implementable, and directly traceable to the research on what builds resilience in ordinary children in ordinary schools. They are also the kinds of practices that, when embedded in a coherent framework — when a school staff shares not just the strategies but the understanding of <em>why</em> they work — compound across an entire school culture rather than remaining isolated in individual classrooms.</p>
+
+  <p>That coherent framework is what the REACH model provides.</p>
+
+  <h2>The REACH Model: Applied to the School Day</h2>
+
+  <p>The REACH model is not a program to be adopted or a curriculum to be scheduled. It is a set of five operational principles — a professional stance toward children — that translates the Circle of Courage's four developmental needs into the specific conditions of a school day. What does it look like to build belonging during a transition? How does a teacher structure a lesson to produce genuine mastery rather than performed compliance? When does independence get built — not assumed? Where does generosity live in a school that is driven by assessment and standards?</p>
+
+  <p>REACH answers each of these questions, in the language of the school day every educator already inhabits.</p>
 
   <div class="reach-model">
     <div class="reach-header">
-      <span class="reach-title">REACH</span>
-      <span class="reach-sub">Five Conditions. Every Child. Every Day.</span>
+      <span class="reach-title-word">REACH</span>
+      <span class="reach-sub">Applied to the School Day — A Framework for Every Educator</span>
     </div>
 
     <div class="reach-row">
       <div class="reach-letter">R</div>
       <div class="reach-content">
+        <div class="reach-hook">Activates: Belonging</div>
         <h4>Relationships First</h4>
-        <p>Werner's sixty-year study found that the single most reliable predictor of resilience was one caring adult who genuinely believed in the child. Not a program — a person. Which means the most important hiring decision a school leader makes is not about credentials. It's about disposition. The adult who moves toward kids, not away. Who remembers what a child told them last Tuesday. Who is glad to be there on a hard day as much as an easy one.</p>
-        <p>One interview question reveals this more reliably than any resume: <em>"Tell me about a child you found genuinely difficult to connect with — and what you did about it."</em> The answer tells you whether that person understands that the hardest child to reach is the one who needs reaching most. In practice, Relationships First means every child is greeted by name at the door — every day, by an adult who is present. Phones away. Eyes up. Not a policy. A posture that has to be hired for, trained, and held as a non-negotiable standard.</p>
+        <p>Werner's sixty-year study found that the single most reliable predictor of resilience was the presence of at least one caring adult who believed in a child. In a school building, that adult is most likely a teacher. Relationships First means the teacher functions as that adult — not incidentally, not when time permits, but as a professional commitment that shapes daily practice.</p>
+        <p>In the school day, this looks like standing at the door during arrivals rather than reviewing lesson plans. It looks like morning meeting as a non-negotiable anchor, not an enrichment option. It looks like knowing, each week, which students you have had no real personal contact with — and doing something about it. It looks like the 2×10 protocol deployed deliberately with students whose disconnection is visible, and the 4:1 ratio deployed universally, because every child's nervous system is making the same calculation: <em>is this person safe? Do they believe in me?</em> The answer a child arrives at shapes everything else that happens in the room.</p>
+        <div class="reach-strategies">
+          <div class="rs-label">Key Strategies</div>
+          <span class="strategy-chip">2×10 Protocol</span>
+          <span class="strategy-chip">Door Greeting by Name</span>
+          <span class="strategy-chip">Morning Meeting</span>
+          <span class="strategy-chip">4:1 Ratio</span>
+        </div>
       </div>
     </div>
 
     <div class="reach-row">
       <div class="reach-letter">E</div>
       <div class="reach-content">
+        <div class="reach-hook">Activates: Belonging · Safety</div>
         <h4>Environment by Design</h4>
-        <p>Children read spaces before they read people. A room that is organized and clearly waiting for students delivers a message before anyone speaks: you were expected here, and someone cared enough to get ready for you. That lowers cortisol. It signals safety. A nervous system that feels safe learns — one on alert protects itself instead.</p>
-        <p>In practice: materials are set before students arrive. The day's schedule is posted in specific, engaging language — not "work time" but "engineering challenge: redesign the school lunch line." Zones are defined. The room itself is doing part of the work before the bell rings. Schools that take this seriously find that behavioral incidents at transitions decrease — not because rules changed, but because the environment stopped creating the chaos that made transitions hard in the first place.</p>
+        <p>Before the first child arrives, a deliberate teacher has already made dozens of environmental decisions. Where will students sit, and why? What does the room communicate about who belongs here? Is the day's schedule visible, specific, and posted in language students can actually understand? Are materials accessible so children don't have to ask for permission to begin? Are transitions designed — not just tolerated?</p>
+        <p>For children whose home environments are unpredictable, a classroom that is consistently organized, consistently prepared, and consistently warm communicates something before any adult speaks: <em>someone thought about you before you got here.</em> That message, received reliably enough times, is what an unsettled nervous system eventually decides to believe. Environment is not aesthetics. It is the first lesson every child receives upon entering the room — and the design of that lesson is entirely within the teacher's control.</p>
+        <div class="reach-strategies">
+          <div class="rs-label">Key Strategies</div>
+          <span class="strategy-chip">Posted Schedule with Specific Language</span>
+          <span class="strategy-chip">Prepared Transitions</span>
+          <span class="strategy-chip">Accessible Materials</span>
+          <span class="strategy-chip">Consistent Room Arrangement</span>
+        </div>
       </div>
     </div>
 
     <div class="reach-row">
       <div class="reach-letter">A</div>
       <div class="reach-content">
-        <h4>Activate Belonging</h4>
-        <p>Belonging doesn't happen on its own in a room full of kids who didn't choose to be together. It has to be built — every day, for every child, including the one at the edge of the group who has learned that belonging isn't safe and pushes it away when it gets close. That child is the real test of whether a school is doing this work.</p>
-        <p>Activating belonging looks like: morning circles where every student is seen before instruction starts. Cooperative structures where no one succeeds without the group. Adults who scan the room and notice — really notice — who is on the margins, and move toward them with genuine curiosity, not a clipboard. Schools can build this into their culture with a simple professional standard: no child ends the day unseen by at least one adult who actually knows them.</p>
+        <div class="reach-hook">Activates: Belonging · Mastery</div>
+        <h4>Activate Belonging — and Mastery — Every Day</h4>
+        <p>Belonging does not happen automatically in a room full of children. It must be actively created — in every lesson structure, every group configuration, every moment of transition. The teacher who practices this principle scans the room during collaborative work and notices who is not part of anything — the child whose group has quietly stopped including them, the one who seems present but is watching from the outside. Belonging is activated by design: morning meeting circles where every child is seen, partner structures that rotate so no student is stuck with the same social geography all year, and academic tasks with genuine stakes in which a child's contribution actually changes the outcome.</p>
+        <p>Mastery is activated the same way — by design. The Try 3 protocol is a belonging and mastery tool simultaneously: it communicates that struggle is expected and survivable, that the teacher believes the answer is already inside the student, and that asking for help is what you do after you have tried — not instead of trying. A student who experiences genuine mastery — real struggle, followed by real success, earned by their own effort — has accumulated internal evidence that their engagement with difficulty produces results. That evidence is what resilience is made of.</p>
+        <div class="reach-strategies">
+          <div class="rs-label">Key Strategies</div>
+          <span class="strategy-chip">Try 3 Before Me</span>
+          <span class="strategy-chip">Rotating Partner Structures</span>
+          <span class="strategy-chip">Morning Meeting</span>
+          <span class="strategy-chip">Productive Struggle by Design</span>
+        </div>
       </div>
     </div>
 
     <div class="reach-row">
       <div class="reach-letter">C</div>
       <div class="reach-content">
+        <div class="reach-hook">Activates: Safety · Independence</div>
         <h4>Consistency Creates Safety</h4>
-        <p>Safety accumulates through reliable experiences. The same warm greeting on a hard Thursday as on a good Monday. The same structure, the same response, the same adult showing up the same way regardless of what is happening elsewhere in the building. For children navigating unpredictability at home — or in their heads courtesy of social media — a consistent school environment is not a management preference. It is a clinical intervention.</p>
-        <p>Practically: predictable daily rhythms students can count on. Adults who maintain the same tone under pressure. When something changes — a schedule shift, a substitute, a disruption — someone explains it, because children shouldn't be expected to absorb chaos silently. Schools that build consistency intentionally discover something counterintuitive: more structure creates more genuine freedom. Children stop spending energy bracing for what's coming next and put it toward learning instead.</p>
+        <p>Safety is not produced by a single powerful experience. It is produced by the repetition of reliable ones. For children whose nervous systems have been calibrated by unpredictability — and in any given classroom, there are more of those children than teachers typically know — safety must be built through accumulated evidence: this place works the same way today as it did yesterday. The schedule is what the schedule said it would be. The teacher shows up with the same warmth on a difficult Friday as on a good Monday. Expectations are clear, consistently held, and applied without arbitrariness.</p>
+        <p>Consistency, understood this way, is not a classroom management preference. It is a clinical intervention. It is the structural condition under which a child can stop using cognitive and emotional resources to monitor for threat — and redirect those resources toward learning. The teacher who is warm on some days and unpredictable on others is not merely inconsistent. They are, for some children, actively recreating the conditions that prevent growth. Predictability, held with warmth, is the foundation on which everything else is built.</p>
+        <div class="reach-strategies">
+          <div class="rs-label">Key Strategies</div>
+          <span class="strategy-chip">Consistent Daily Routines</span>
+          <span class="strategy-chip">Clear, Visible Expectations</span>
+          <span class="strategy-chip">Reliable Transitions</span>
+          <span class="strategy-chip">Warm Consistency Across All Days</span>
+        </div>
       </div>
     </div>
 
     <div class="reach-row">
       <div class="reach-letter">H</div>
       <div class="reach-content">
+        <div class="reach-hook">Activates: Generosity · Independence · Purpose</div>
         <h4>Have Purpose in Everything</h4>
-        <p>When students understand why they're doing something — not just what — they stop complying and start investing. This is the difference between a student who does a service project because it's required and one who understands that contributing beyond themselves is the point — and carries that into the next hard thing they face.</p>
-        <p>In schools, this means every adult can articulate the developmental reason behind every activity, not just the academic one. Homework support is structured so students try before they ask — building the experience of productive struggle, which is the raw material of mastery. Physical activity is chosen for cooperation, not elimination. And when a student asks "why are we doing this?" the answer goes beyond the lesson plan. When every adult in a building can answer that question with something true and specific, the culture of the school shifts in ways that standardized tests eventually catch up to.</p>
+        <p>Viktor Frankl, who survived the Nazi concentration camps and spent the rest of his life studying human resilience, established that the capacity to find meaning — to believe one's existence serves something beyond oneself — is among the most powerful resilience factors available to any human being. In a school, this is not an abstract aspiration. It is a design question: does the work students do matter to anyone beyond the grade book?</p>
+        <p>Academic work that carries real stakes produces a qualitatively different kind of engagement than work that exists only to be evaluated. The community mapping project Marcus's class undertook — a letter to the parks department about broken equipment in a neighborhood park — is academically rigorous writing instruction. It is also generosity, independence, and purpose made concrete: real children, writing real words, about a real problem, to real decision-makers. That combination activates three of the Circle of Courage's four developmental needs simultaneously. Teachers who ask themselves regularly — <em>who is the audience for this work beyond me? What decision does it inform? Who does it help?</em> — are not lowering academic standards. They are raising the stakes that make those standards worth meeting.</p>
+        <div class="reach-strategies">
+          <div class="rs-label">Key Strategies</div>
+          <span class="strategy-chip">Real-Audience Academic Tasks</span>
+          <span class="strategy-chip">Community-Connected Projects</span>
+          <span class="strategy-chip">Student-Led Contributions</span>
+          <span class="strategy-chip">Explicit Purpose for Every Activity</span>
+        </div>
       </div>
     </div>
   </div>
 
-  <h2>Designing the Environment — and the People In It</h2>
+  <h2>The Research Behind the Four Needs</h2>
 
-  <p>What REACH makes clear is that resilience isn't a program you bolt onto an existing school. It's an environment you design — and environments are made of people as much as spaces and schedules. A school can post the right values on the wall and hire adults who quietly undermine them every day. The design has to go all the way down: to how you write a job description, what you ask in an interview, what you celebrate publicly, and what you hold as a non-negotiable standard even when it's inconvenient.</p>
+  <p>Each principle of the REACH model is grounded in a specific developmental need identified by six decades of convergent research. Understanding what each need does — what happens in a child's development when it is consistently met, and what happens when it isn't — is what makes the REACH model a professional framework rather than a list of nice practices.</p>
 
-  <p>Imagine a school where every adult greets every child by name at the start of every day. Where classrooms are ready before students arrive. Where a struggling student has at least two adults who notice when something is off — and know enough about that child to say something true. Where cooperative challenge is a regular feature of the week, and service to others is built into the rhythm of the year. That school exists — in pieces, in many good schools already. REACH is the framework that makes it intentional across the whole building, for every child, every day.</p>
-
-  <div class="callout">
-    <div class="callout-label">A Framework Built From Research — Designed for Practice</div>
-    <p>The REACH model was developed by Dr. Brett Prilik, drawing on sixty years of resilience research, the Circle of Courage framework, and direct experience designing and running programs for children across a range of school communities. It was built for the real world — not ideal conditions, but actual schools and actual adults who need something they can learn, practice, and hold each other accountable to.</p>
-    <p>What the research established studying children in adversity, REACH makes available to every child in every environment. Because the conditions it builds — belonging, mastery, independence, generosity, consistency, relationship — are not remedial. They are universal. They are what every child needs to become someone who can handle a harder world than the one they were born into. And building them is not as complicated as it sounds. It requires intention. It requires training. It requires adults who were hired partly for their capacity to do this work. And it requires leadership willing to hold it as a standard rather than an aspiration.</p>
-    <p>The question is not whether this is possible. The question is whether we are ready to expect it.</p>
+  <div class="research-strip">
+    <div class="rs-header-label">The Circle of Courage — Four Universal Developmental Needs</div>
+    <div class="research-item">
+      <div class="ri-letter">B</div>
+      <div class="ri-text">
+        <strong>Belonging — The Neurological Prerequisite for Learning</strong>
+        A child under chronic social threat — who does not know whether they belong, who scans the room for exclusion before they can settle into the lesson — cannot access the learning state. The prefrontal cortex, responsible for reasoning, planning, and complex thought, is partially offline when the threat-detection system is engaged. Belonging is not a social nicety supplementary to academics. It is the neurological prerequisite without which the academic enterprise cannot fully function.
+        <br><cite>Werner, 1992 · Bowlby, 1988 · Siegel, 2012 · Brendtro et al., 1990</cite>
+      </div>
+    </div>
+    <div class="research-item">
+      <div class="ri-letter">M</div>
+      <div class="ri-text">
+        <strong>Mastery — Evidence That Effort Changes Outcomes</strong>
+        Carol Dweck's foundational research on growth mindset established that the key variable separating students who persist through difficulty from those who don't is not intelligence or talent. It is whether the student has accumulated internal evidence that their effort makes a difference. Genuine mastery experiences — real struggle, followed by real success, achieved by the student's own effort — produce that evidence. Praise, encouragement, and external validation do not. The Try 3 protocol is a mastery engineering tool: it ensures the evidence is real, earned, and the student's own.
+        <br><cite>Dweck, 2006 · Bandura, 1997 · Masten, 2001</cite>
+      </div>
+    </div>
+    <div class="research-item">
+      <div class="ri-letter">I</div>
+      <div class="ri-text">
+        <strong>Independence — Building the Internal Compass</strong>
+        Self-determination theory, developed by Ryan and Deci across decades of research, established that autonomy — the experience of genuine self-direction — is a fundamental human psychological need, as essential as competence and connection. Children who are never allowed to make real decisions, navigate real uncertainty, or experience real consequences of their own choices have no internal compass for the moments when no adult is present to provide direction. Independence is not the absence of structure. It is the development, within appropriate structure, of a child's capacity to direct their own experience.
+        <br><cite>Ryan &amp; Deci, 2000 · Rutter, 2006 · Brendtro et al., 1990</cite>
+      </div>
+    </div>
+    <div class="research-item">
+      <div class="ri-letter">G</div>
+      <div class="ri-text">
+        <strong>Generosity — The Proof That You Matter</strong>
+        Frankl's insight, confirmed repeatedly by subsequent research on meaning-making and psychological resilience, is that the capacity to contribute — to believe that one's existence serves something beyond oneself — is among the most powerful protective factors available to any human being. Children who contribute to something larger than themselves discover, through concrete evidence, that they matter. That discovery changes how they face difficulty. Academic work designed with real audiences and genuine community stakes is not enrichment. It is generosity made operational — and it is one of the highest-leverage things a school can offer.
+        <br><cite>Frankl, 1946 · Brendtro et al., 1990 · Benson, 2006</cite>
+      </div>
+    </div>
   </div>
+
+  <h2>Why This Cannot Be Left to Chance</h2>
+
+  <p>The world Marcus is being prepared to enter is being reshaped by artificial intelligence at a pace no curriculum can fully track. The jobs he will hold probably have no names yet. The skills that will matter most — the capacity to persist through genuine uncertainty, to collaborate across difference, to adapt when the map disappears, to find meaning in a landscape of shifting demands — are precisely the capacities that resilience comprises. And they are not produced by any particular subject area, any specific technology, or any curriculum that will be outdated before he reaches high school.</p>
+
+  <p>They are produced by environments. By the consistent, daily experience of being known, challenged within a relationship of genuine belief, given real agency, and connected to something that matters. By schools that understand what they are building — not just what they are teaching.</p>
+
+  <div class="conviction">
+    <div class="conviction-label">The Case for Deliberate Design</div>
+    <p>Every school is already producing resilience outcomes — for every child, every day, whether or not anyone has made a conscious choice about it. The environment is never neutral. The question is not whether your school shapes children's adaptive capacity. It does. The question is whether it does so deliberately — with the full weight of what sixty years of research has established about what children need, what produces it, and what gets in the way.</p>
+    <p>The REACH model does not ask schools to add a program. It asks schools to make a professional commitment: to understand what belonging, mastery, independence, and generosity actually require in the context of a school day — and to design for them, consistently, in every classroom, with every child. Not because the children who need it most are in the building. Because every child who walks through the door is more capable than they yet know, and every environment is either helping them discover that or failing to.</p>
+  </div>
+
+  <h2>A Direct Word to Administrators</h2>
+
+  <div class="admin-challenge">
+    <div class="ac-label">For School Leaders</div>
+    <p>"Walk your building tomorrow morning and count how many adults are standing at classroom doors when students arrive. Watch whether morning meeting runs with intention or gets skipped when the schedule gets tight. Notice which teachers have made the 2×10 commitment to a struggling student and which ones are managing behavior reactively. What you are observing is not just instructional practice. You are observing the resilience infrastructure of your school — the environmental conditions that are either building the adaptive capacity your students will need for the rest of their lives, or leaving that capacity to chance."</p>
+    <p>"The REACH model gives your staff a shared language and a common professional framework for what deliberate resilience-building looks like in a school. It connects the strategies your best teachers already use instinctively — greeting students by name, building mastery through productive struggle, holding consistent warmth — to the research that explains why those strategies work and what they are building. A school where every teacher understands that framework, and every administrator reinforces it, is a school where resilience is not a hoped-for outcome. It is a designed one."</p>
+  </div>
+
+  <p>Marcus will be in school — or in some learning environment adjacent to it — for another nine years after this Tuesday in October. He will accumulate tens of thousands of additional hours of environmental input before he graduates. Every one of those hours will either strengthen his adaptive capacity or fail to. Either activate his sense of belonging, his experience of genuine mastery, his independence, his sense that he matters to something beyond himself — or leave those systems undernourished.</p>
+
+  <p>He is not a special child. He is not uniquely resilient. He is nine years old and he had a Tuesday that was designed by a teacher who understood what he was doing and chose to do it deliberately. That choice is available to every teacher in every school on every ordinary day of the academic year.</p>
+
+  <p>Resilience is not a gift. It is a design problem. And the people best positioned to solve it are already in the building.</p>
+
+  <p><em>We REACH every child. Every day. By design.</em></p>
 
   <div class="partner-cta">
-    <h3>Give Every Child the Conditions to Become Who They're Capable of Being.</h3>
-    <p>The REACH framework — developed by Dr. Brett Prilik — is a trainable, research-grounded model for building the conditions every child needs to thrive. Not just the ones we're already worried about.</p>
-    <a href="#" class="cta-btn">Learn More About REACH</a>
-  </div>
-
-  <div class="footnote">
-    <p><strong>About the Author</strong></p>
-    <p>Dr. Brett Prilik holds an Ed.D. from the University of Northern Colorado with emphasis in school administration and special education. A former teacher, building administrator, and district-level administrator, he has served as adjunct faculty at the University of Northern Colorado's School of Education and has been involved in the development of six school programs across public school and nonprofit settings. He is the founder and CEO of Innovation Learning and the developer of the REACH framework.</p>
-    <p>His published works include his doctoral dissertation, <em>Resiliency in Public School Teachers of Students with Emotional Disabilities</em> (University of Northern Colorado), as well as <em><a href="https://drbprilik.github.io/innovation-learning-blog-1/" style="color: var(--accent);">125 Days: Every Child Already Has a Second School Year</a></em> and <em>Resilience Is Engineered, Not Hoped For</em> — both available at Innovation Learning.</p>
-
-    <p><strong>Research References</strong></p>
-    <p>Prilik, B. (2007). <em>Resiliency in public school teachers of students with emotional disabilities.</em> Doctoral dissertation, University of Northern Colorado.</p>
-    <p>CDC. (2024). Youth Risk Behavior Survey: Data Summary &amp; Trends Report, 2013–2023. Centers for Disease Control and Prevention.</p>
-    <p>Surgo Health. (2024). Youth Mental Health Tracker. surgohealth.com</p>
-    <p>Jakubowski, M., et al. (2024). Global learning loss analysis based on 2022 PISA data. International standardized test research.</p>
-    <p>Durlak, J. A., Weissberg, R. P., Dymnicki, A. B., Taylor, R. D., &amp; Schellinger, K. B. (2011). The impact of enhancing students' social and emotional learning: A meta-analysis of school-based universal interventions. <em>Child Development, 82</em>(1), 405–432.</p>
-    <p>Ha, C., et al. (2025). Universal school-based SEL programs and academic achievement: A meta-analysis of 40 empirical studies. <em>Review of Educational Research.</em> Yale University / USC.</p>
-    <p>Masten, A. S. (2001). Ordinary magic: Resilience processes in development. <em>American Psychologist, 56</em>(3), 227–238.</p>
-    <p>Werner, E. E., &amp; Smith, R. S. (1992). <em>Overcoming the Odds: High-Risk Children from Birth to Adulthood.</em> Cornell University Press.</p>
-    <p>Brendtro, L., Brokenleg, M., &amp; Van Bockern, S. (1990). <em>Reclaiming Youth at Risk: Our Hope for the Future.</em> Solution Tree Press.</p>
-    <p>Frankl, V. (1959). <em>Man's Search for Meaning.</em> Beacon Press.</p>
-    <p>JED Foundation. (2025). Youth Mental Health Trends in 2025. jedfoundation.org</p>
+    <h3>Ready to Design for Resilience?</h3>
+    <p>Innovation Learning partners with K–8 schools to bring the REACH framework into every classroom and every school day — giving teachers and administrators a shared language, a research-grounded framework, and the practical strategies to build resilience deliberately, for every child.</p>
+    <a href="#" class="cta-btn">Start the Conversation</a>
   </div>
 
 </article>
 
-<div class="series-nav">
-  <span class="series-label">Related Reading</span>
-  <a href="https://drbprilik.github.io/innovation-learning-blog-1/" class="series-link">125 Days: Every Child Already Has a Second School Year →</a>
-</div>
-
 <footer>
-  <div class="footer-org">Resilience &amp; Academic Readiness</div>
-  <p>Research, frameworks, and practice for educational programs committed to building every child's capacity to thrive.</p>
+  <div class="footer-org">Innovation Learning</div>
+  <p>We REACH Every Child. Every Day. &nbsp;·&nbsp; Building Resilient Learners for an Uncertain World.</p>
 </footer>
 
 </body>
