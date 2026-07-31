@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Disrupting After School | Innovation Learning</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,600;0,9..144,700;0,9..144,800;1,9..144,600;1,9..144,700&family=Jost:ital,wght@0,300;0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --cream:#F7F4EE;      /* page background */
+    --navy:#1B2440;       /* display headlines + rules */
+    --orange:#C14B27;     /* accent: numerals, headings, eyebrow, drop cap */
+    --body:#4A4E63;       /* paragraph text */
+    --meta:#6E7284;       /* metadata gray */
+    --hairline:#DDD9D0;   /* thin dividers */
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  body{
+    font-family:'Jost',sans-serif;
+    font-weight:400;
+    background:var(--cream);
+    color:var(--body);
+    line-height:1.85;
+    font-size:1.1rem;
+  }
+  .page{
+    max-width:960px;
+    margin:0 auto;
+    padding:4.5rem 2rem 5rem;
+  }
+  .eyebrow{
+    color:var(--orange);
+    font-size:.85rem;
+    font-weight:500;
+    letter-spacing:.32em;
+    text-transform:uppercase;
+    margin-bottom:1.4rem;
+  }
+  .rule-thick{
+    border:none;
+    border-top:3px solid var(--navy);
+    margin:0 0 3.5rem;
+  }
+  .rule-thick.below{margin:3.5rem 0 2.5rem;}
+  .hero{
+    display:grid;
+    grid-template-columns:minmax(200px,1fr) 2fr;
+    gap:3rem;
+    align-items:center;
+  }
+  .hero-number{
+    font-family:'Fraunces',serif;
+    font-weight:800;
+    font-size:clamp(8rem,20vw,15rem);
+    line-height:.85;
+    color:var(--orange);
+    text-align:center;
+  }
+  .hero-headline{
+    font-family:'Fraunces',serif;
+    font-weight:700;
+    font-size:clamp(2.2rem,5vw,3.4rem);
+    line-height:1.12;
+    color:var(--navy);
+    margin-bottom:1.4rem;
+  }
+  .hero-headline em{
+    display:block;
+    font-style:italic;
+    color:var(--orange);
+    font-weight:700;
+  }
+  .hero-standfirst{
+    font-size:1.08rem;
+    line-height:1.8;
+    max-width:34em;
+  }
+  .meta-line{
+    font-size:.85rem;
+    letter-spacing:.14em;
+    text-transform:uppercase;
+    color:var(--meta);
+    margin-bottom:3rem;
+  }
+  .meta-line .dot{color:var(--orange);padding:0 .8em;}
+  .rule-thin{
+    border:none;
+    border-top:1px solid var(--hairline);
+    margin:0 0 4rem;
+  }
+  article{max-width:720px;margin:0 auto;}
+  article p{margin-bottom:1.5rem;}
+  .dropcap::first-letter{
+    font-family:'Fraunces',serif;
+    font-weight:700;
+    color:var(--orange);
+    float:left;
+    font-size:5.2rem;
+    line-height:.78;
+    padding:.08em .12em 0 0;
+  }
+  h2{
+    font-family:'Fraunces',serif;
+    font-weight:700;
+    font-size:2rem;
+    line-height:1.2;
+    color:var(--orange);
+    margin:3.6rem 0 1.4rem;
+  }
+  h2 em{font-style:italic;color:var(--orange);}
+  .practice{
+    border-top:1px solid var(--hairline);
+    padding:1.5rem 0 .4rem;
+  }
+  .practice.last{border-bottom:1px solid var(--hairline);margin-bottom:1.8rem;padding-bottom:1.5rem;}
+  .practice strong{
+    display:block;
+    font-family:'Fraunces',serif;
+    font-weight:700;
+    font-size:1.25rem;
+    color:var(--navy);
+    margin-bottom:.4rem;
+  }
+  .practice strong .lead{color:var(--orange);}
+  .pull{
+    font-family:'Jost',sans-serif;
+    font-weight:500;
+    font-size:1.45rem;
+    line-height:1.55;
+    color:var(--navy);
+    text-align:center;
+    border-top:3px solid var(--navy);
+    border-bottom:3px solid var(--navy);
+    padding:2rem 1rem;
+    margin:3.4rem 0;
+  }
+  .closing{
+    text-align:center;
+    margin-top:4rem;
+    padding-top:2.6rem;
+    border-top:3px solid var(--navy);
+  }
+  .closing .invite{
+    font-family:'Fraunces',serif;
+    font-weight:700;
+    font-size:1.9rem;
+    line-height:1.25;
+    color:var(--navy);
+    margin-bottom:.8rem;
+  }
+  .closing .invite em{font-style:italic;color:var(--orange);}
+  footer{
+    max-width:960px;
+    margin:0 auto;
+    padding:0 2rem 3rem;
+    text-align:center;
+    font-size:.8rem;
+    letter-spacing:.18em;
+    text-transform:uppercase;
+    color:var(--meta);
+  }
+  footer .dot{color:var(--orange);padding:0 .8em;}
+  @media (max-width:640px){
+    .hero{grid-template-columns:1fr;gap:1rem;text-align:left;}
+    .hero-number{text-align:left;font-size:7rem;}
+    .page{padding:3rem 1.3rem 3.5rem;}
+  }
+</style>
+</head>
+<body>
+
+<div class="page">
+
+  <div class="eyebrow">Disrupting After School &mdash; Turning Coverage Into Child Development</div>
+  <hr class="rule-thick">
+
+  <div class="hero">
+    <div class="hero-number">125</div>
+    <div>
+      <h1 class="hero-headline">Disrupting After School.<em>The Industry Doesn't See It Coming.</em></h1>
+      <p class="hero-standfirst">Before- and after-school care is a multi-billion-dollar industry built on one quiet assumption: these hours are something to be covered, not something to be used. At Innovation Learning, we looked at the same hours and saw 125 days of learning hiding inside every school year.</p>
+    </div>
+  </div>
+
+  <hr class="rule-thick below">
+
+  <div class="meta-line">Innovation Learning<span class="dot">&middot;</span>Before &amp; After School Programs<span class="dot">&middot;</span>The REACH Framework &middot; 2026</div>
+  <hr class="rule-thin">
+
+  <article>
+
+    <p class="dropcap">Before- and after-school care has run for decades on the same playbook: supervision, a snack, a craft table, and a word like &ldquo;enrichment&rdquo; on the brochure. The children are safe. The parents are relieved. And an enormous opportunity sits untouched.</p>
+
+    <p>The math is simple. Five hours a day, before and after school, across a 180-day school year. That's nearly 900 hours &mdash; the equivalent of 125 additional school days &mdash; already present in every school community. No new buildings. No new buses. No new legislation. The time is there. The children are there. The only question is what happens during those hours.</p>
+
+    <p>We built our entire company to answer that question &mdash; and the answer rests on two things given equal weight: a research-based developmental framework, and the adult who delivers it. Neither works without the other. This is the story of both.</p>
+
+    <h2>Built by Educators, for a Different Purpose</h2>
+
+    <p>It matters where a company comes from, because origins shape priorities.</p>
+
+    <p>Much of this industry is operated by franchise systems and private equity firms &mdash; in some cases headquartered overseas &mdash; whose expertise is in scaling operations and returning capital. That's not a criticism; it's simply a different purpose. When a company is built to maximize enrollment and minimize cost, the program that results will reflect exactly that.</p>
+
+    <p>Innovation Learning was built by educators. Our leadership and site teams include former principals, classroom teachers, district administrators, and youth-development professionals &mdash; people who have spent their careers inside schools and understand what administrators are actually accountable for: academic growth, student well-being, family trust, and the culture of the building. Innovation Learning itself was founded only after listening to more than one hundred principals and parents about what they truly wanted from out-of-school time.</p>
+
+    <p>That paradigm difference shows up everywhere. We reinvest in our programs rather than extracting from them. We co-create with schools rather than dropping a franchise model into the cafeteria. And when we sit across from a superintendent, we're not pitching coverage. We're offering a partner who sees the hours before and after school the way the school sees the hours in between: as learning time, with a plan behind it.</p>
+
+    <h2>Two Tracks, One Child</h2>
+
+    <p>The industry's deepest mistake is treating the school day and the out-of-school hours as separate worlds &mdash; one where learning happens, one where children wait for pickup.</p>
+
+    <p>We reject that split. We call these hours the Five-Hour Advantage, and we run them on a parallel course with the school day: a second track carrying the same child toward the same destination. While the classroom builds academic knowledge, our hours reinforce and extend it, wrapped in the conditions that make learning stick &mdash; connection, belonging, practice, and purpose. The result is a child supported on both tracks: growing academically, growing socially, and becoming a more resilient learner. Not three separate goals. One developmental framework, running all day long.</p>
+
+    <p>That framework has a name.</p>
+
+    <h2>The REACH Model</h2>
+
+    <p>Our proprietary REACH model translates decades of resilience research into what actually happens between an adult and a child at 3:45 on a Tuesday afternoon. Beneath it sit the four pillars of the Circle of Courage &mdash; Belonging, Mastery, Independence, and Generosity &mdash; the conditions every child needs to thrive. REACH is how those conditions get built, deliberately, every day, for every child, not just those in crisis:</p>
+
+    <div class="practice"><strong><span class="lead">R</span> &mdash; Relationships First.</strong><p>Decades of resilience research converge on one finding: the single most powerful protective factor in a child's life is a consistent, caring adult. So relationships aren't the warm-up to our program &mdash; they are the program. Every child is known by name, greeted at the door, and connected to an adult who notices when something is off.</p></div>
+
+    <div class="practice"><strong><span class="lead">E</span> &mdash; Environment by Design.</strong><p>Nothing about our spaces, schedules, or routines is accidental. The room, the rhythm of the afternoon, and the structure of every activity are designed to signal the same message: you are safe here, you belong here, and something worth doing is about to happen.</p></div>
+
+    <div class="practice"><strong><span class="lead">A</span> &mdash; Activate Belonging.</strong><p>Belonging is the first pillar of the Circle of Courage because nothing else works without it. Through daily circles, shared rituals, and deliberate inclusion, every child becomes part of something bigger than themselves &mdash; and a child who belongs is a child who engages.</p></div>
+
+    <div class="practice"><strong><span class="lead">C</span> &mdash; Consistency Creates Safety.</strong><p>Predictable routines and familiar faces free a child's mind to learn. When children know what comes next and who will be there, energy that would go toward vigilance goes toward growth instead. Consistency is not a nicety; it is a neurological precondition for learning.</p></div>
+
+    <div class="practice last"><strong><span class="lead">H</span> &mdash; Have Purpose in Everything.</strong><p>Nothing in our programs is filler. Every activity maps to a pillar &mdash; building mastery through hands-on projects, independence through real choices, generosity through helping others. If an hour doesn't serve the child's development, it doesn't belong in our day.</p></div>
+
+    <p>For an administrator, this is the difference between a vendor and a partner. A program built on REACH isn't a separate operation in your cafeteria &mdash; it's an extension of your school's mission, reinforcing academic growth, social growth, and resilience for 125 more days a year.</p>
+
+    <div class="pull">A framework builds the conditions. A person builds the child. Our model requires both.</div>
+
+    <h2>The Adult in the Room Delivers the Model</h2>
+
+    <p>Here is the truth that makes REACH work &mdash; and the truth the industry ignores: a framework, however well designed, doesn't build resilience in a child. A person does, consistently, over time. Relationships First requires someone to build the relationship. Consistency Creates Safety requires the same adults, month after month. A child cannot build resilience with a rotating cast of strangers.</p>
+
+    <p>This is where the industry's standard labor model quietly undermines its own product. Minimum-wage staffing and high turnover aren't just an HR problem; they're a program-quality problem, because every departure breaks the relationships the entire model depends on.</p>
+
+    <p>So Innovation Learning made a different bet: our frontline staff are not a cost to be minimized. They are half of the model itself. Here is what that means in practice:</p>
+
+    <div class="practice"><strong>We pay 24% above the industry norm.</strong><p>Not as charity &mdash; as strategy. That premium lets us hire for disposition over credential, keep the adults children have bonded with in the building, and attract people who see this work as a profession rather than a stopgap.</p></div>
+
+    <div class="practice"><strong>We train like champions train.</strong><p>We brought in the former Head of Training for the USA Olympic Committee to build a state-of-the-art training platform for our people. The same caliber of preparation that develops elite athletes now develops the adults standing in front of your students at 3:45 in the afternoon.</p></div>
+
+    <div class="practice"><strong>We give the work a purpose.</strong><p>Our people aren't &ldquo;aides&rdquo; or &ldquo;monitors.&rdquo; They are Resilience Coaches, and REACH gives them a why behind every what. Greeting a child by name at the door is Relationships First. Running the same predictable routine every afternoon is Consistency Creates Safety. People stay in work that matters &mdash; and they do it better when they understand why it matters.</p></div>
+
+    <div class="practice"><strong>We built software that changes how staffing is viewed.</strong><p>Instead of drowning frontline staff in paperwork, our integrated platform &mdash; connecting enrollment, scheduling, payroll, and operations, with AI-powered support &mdash; strips administrative burden away from site teams. Every hour of paperwork we eliminate is an hour returned to children.</p></div>
+
+    <div class="practice last"><strong>We communicate with our people like professionals.</strong><p>Our coaches get the information, preparation, and direct communication that let them walk into every session ready. You cannot ask people to perform like professionals while treating them like temporary help. We treat them like professionals, so they prepare like professionals &mdash; and students get the benefit.</p></div>
+
+    <p>For administrators, the payoff is the thing this industry almost never delivers: the same caring, prepared adults in your building in May who were there in September &mdash; running the same research-based model all year long.</p>
+
+    <h2>Changing What These Hours Are For</h2>
+
+    <p>Everything above is one strategy with two equal halves. REACH gives every hour a purpose; our people give every hour a person. The framework without the adult is a binder on a shelf. The adult without the framework is well-meaning improvisation. Together, they turn the Five-Hour Advantage into exactly that &mdash; an advantage, delivered 125 days a year, on a track that runs parallel to yours.</p>
+
+    <p>The market has long believed these hours are for childcare &mdash; a safe place for children to wait. Innovation Learning believes they are for child development: academic growth, social growth, and resilient learners, built deliberately, in partnership with the schools we serve.</p>
+
+    <div class="closing">
+      <div class="invite">The 125 days are already inside your school year.</div>
+      <p style="max-width:34em;margin:0 auto;">We'd welcome the conversation about what they could become.</p>
+    </div>
+
+  </article>
+
+</div>
+
+<footer>
+  Innovation Learning<span class="dot">&middot;</span>innovationlearning.com
+</footer>
+
+</body>
+</html>
